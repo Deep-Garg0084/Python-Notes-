@@ -1,0 +1,532 @@
+Chapter1 - Variables and Datatypes
+
+- Python version 
+- What is Python ?
+- Why should we study python ?
+- Our first program 
+- Python indentation 
+- Python character set 
+- Identifier and their rules 
+- Typed language - Dynamic and static 
+- Typed checking 
+- Semicolon 
+- Varibles 
+- Data types 
+- Keywords 
+- Token 
+- Comment 
+- Input 
+- Operators 
+- Conditional statements 
+- Typed conversion 
+
+Python version:-
+To check the Python version of the editor, you can find it by importing the sys module:
+
+Example:
+import sys
+print(sys.version)
+
+OR
+
+py --version
+
+Machine(laptop) <- Translator(Compiler/Interpreter) <- Python 
+
+Translator work - Take python then translate python into machine language 
+
+Python is called high level language 
+
+So, translate work is to convert high level language into low level language or machine level language 
+
+What is Python ?
+Python is an easy to use, easy to learn, general purpose, interpreted (line by line execution), object oriented, interactive and high level programming language 
+It's dynamic typing and dynamic binding make it very attractive for rapid application development 
+Python is a computer programming language - a way to tell the computer what to do 
+You can use it to make websites, games, apps, data analysis, artificial intelligence, and more 
+
+Python is easy and simple 
+Free and open source 
+High level language 
+Developed by Guido Van Rossum 
+Portable (Windows, MacOS, Linux)
+
+Why should we study python ?
+-> Easy to learn:-
+   Python has few keywords, simple structure, and a clearly defined syntax
+   This allows the student to pick up the language quickly  
+
+-> Easy to read:-
+   Python code is more clearly defined and visible to the eyes 
+
+-> Easy to maintain:-
+   Python's source code is fairly easy to maintain 
+
+-> A broad standard library:-
+   Python's bulk of the library is very portable and cross platform compatible on UNIX, Windows, and Macintosh 
+
+-> Interactive mode:-
+   Python has support for an interactive mode which allows interactive testing and debugging of snippets of code
+
+-> Portable:-
+   Python can run on a wide variety of hardware platforms 
+
+Our first program :-
+print("Hello World")
+
+To write in a bold:-
+print("\033[1mHello\033[0m")
+
+Python Indentation:-
+Indentation refers to the spaces at the beginning of a code line.
+Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.
+Python uses indentation to indicate a block of code.
+
+Example:-
+
+if 5 > 2:
+  print("Five is greater than two!")
+
+Python character set:-
+Letters - A to Z, a to z
+Digits - 0 to 9
+Special symbols - -,+,*,/ etc
+Whitespaces - Black space, Tab, Carriage return, Newline, Formfeed
+
+Other characters - Python can process all ASCII and unicode characters as part of data or literals 
+
+Whitespaces are characters that represent empty space in text — they don’t show visible symbols but are used to separate words, format code, or control text layout.
+
+Here are the main types of whitespace characters:
+
+1. Blank Space (' ') – A normal space between words.
+   Example: "Hello World" (space between Hello and World)
+
+2. Tab (\t) – Moves the cursor to the next tab stop (used for indentation).
+   Example: Hello\tWorld → Hello    World
+
+3. Carriage Return (\r) – Moves the cursor to the beginning of the same line (used in old systems or with \n for new lines).
+   Example: Hello\rWorld → World
+
+4. Newline (\n) – Moves the cursor to the next line.
+   Example: Hello\nWorld
+
+            Hello
+            World
+
+5. Form Feed (\f) – Moves the cursor to the next page (used mainly in printers or page formatting).
+   Example: It tells the printer to start a new page.
+
+ASCII Characters:-
+ASCII includes English letters, digits, and common symbols.
+
+NOTE:-
+ord() – Converts a character into its ASCII/Unicode value
+
+Example:-
+
+name = "Deep Garg"
+print(name)
+
+Deep Garg
+
+ASCII code:-
+
+print(ord('A'))         65
+print(chr(65))          A
+
+Ques. Lucky number fortune 
+
+name = input("Enter your name: ")
+day = int(input("Enter day: "))
+
+lucky_number = ord(name[0]) + ord(name[-1]) + day 
+print(lucky_number)
+
+Enter your name: priya
+Enter day: 3
+212
+
+NOTE:-
+empty name will cause an error because name[0] cannot access a character from an empty string
+
+Example:-
+
+name = input("Enter your name: ")
+day = int(input("Enter day: "))
+
+luckky_number = ord(name[0]) + ord(name[-1]) + day 
+print(luckky_number)
+
+Enter your name:  Deep
+Enter day: 18
+162
+
+Example:-
+
+name = input("Enter your name: ").strip()
+day = int(input("Enter day: "))
+
+luckky_number = ord(name[0]) + ord(name[-1]) + day 
+print(luckky_number)
+
+Enter your name:  Deep
+Enter day: 18
+198
+
+Unicode Characters:-
+Unicode includes characters from all languages, emojis, and special symbols.
+
+Example:-
+
+text = "नमस्ते"
+print(text)
+
+नमस्ते
+
+Identifier:-
+An identifier is the name used to identify (or label) something in your program — like a variable, function, class, etc.
+
+Example:-
+
+name = "Deep"
+age = 19
+def greet():
+    print("Hello!")
+greet()
+
+Hello!
+
+Here:-
+name and age → identifiers for variables
+greet → identifier for a function
+
+Rules for naming identifiers in Python:-        (ChatGPT)
+
+1. An identifier can contain letters (A–Z, a–z).
+2. It can contain numbers (0–9), but cannot start with a number.
+3. Underscores (_) are allowed.
+4. Spaces are not allowed.
+5. Special characters like @, #, $, % are not allowed.
+6. Python keywords like if, else, for, and class cannot be used as identifiers.
+7. Identifiers are case-sensitive (name and Name are different).
+
+Rules for naming identifiers in Python:-
+
+1.They can contain letters (A–Z, a–z), digits (0–9), and underscores (_)
+  Example: my_name, age2, _temp
+
+2. They must not start with a digit
+   2name → invalid
+   name2 → valid
+
+3. Case-sensitive
+   Name and name are different identifiers.
+
+4. No special symbols like @, $, %, #, -
+   my-name → invalid
+
+5. Keywords (like if, while, class, etc.) can’t be used as identifiers.
+   if = 10 → invalid
+
+6. Python allows Unicode characters in identifiers (not just ASCII).
+   Example:
+   नमस्ते = "Hello"
+   print(नमस्ते)
+
+   Output:
+   Hello
+
+Python is a typed language — but more specifically, it’s a dynamically typed language.
+
+Typed language
+It means every value in Python has a specific type (like int, float, str, etc.).
+Even if you don’t mention the type, Python knows it internally.
+
+Example:
+
+a = 10        # int (integer)
+b = 5.5       # float (decimal number)
+c = "Deep"    # str (string)
+
+Here, a, b, and c each have a type automatically.
+
+Dynamic Typing
+In Python, you don’t need to declare the variable type — it is decided at runtime based on the value assigned.
+
+Example:
+
+x = 10       # x is an int
+x = "Hello"  # now x becomes a str
+
+Python allows this — the type of x changes automatically.
+
+Static Typing (for comparison)
+In languages like C, C++, or Java, you must declare the type before using it.
+
+Example (C++):
+
+int x = 10;
+x = "Hello";    //Error - can't assign string to int
+
+Type Checking in Python:
+a = 42
+print(type(a))
+
+Output:
+<class 'int'>
+
+Semicolon:-
+Semicolons are optional in Python. You can write multiple statements on one line by separating them with ; but this is rarely used because it makes it hard to read
+
+Example:
+print("Hello"); print("How are you?"); print("Bye bye!")
+
+Hello
+How are you?
+Bye bye!
+
+if you put two statements on the same line without a separator (newline or ;), Python will give an error
+
+Example:
+print("Python is fun!") print("Really!")
+
+SyntaxError: invalid syntax
+
+Variables:-
+A variable is a name given to a memory location in a program 
+In Python, a variable is created when you assign a value to it
+Variables store data values. They are created by assigning a value to a variable name
+Variable ek container jaisa hota hai jisme aap koi bhi value store kar sakte ho 
+
+Example:-
+name = "Shradha"
+  
+Here, name - variable name 
+      Shradha - variable value 
+
+Example:-
+name = "Priyanshi"   #String 
+age = 25             #Integer
+height = 5.5         #Float 
+is_coder = True      #Boolean 
+
+Data Types:-
+Python automatically detect datatype 
+Variables can store data of different types, and different types can do different things.
+
+Python has the following data types built-in by default, in these categories:-
+
+Text Type:	      str
+Numeric Types:	   int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	   dict
+Set Types:	      set, frozenset
+Boolean Type:	   bool
+Binary Types:	   bytes, bytearray, memoryview
+None Type:	      NoneType
+
+NOTE:-
+In Python, float serves the role of double
+
+Keywords:-
+Keywords are reserved words in python 
+
+and       else     in         return 
+as        except   is         True 
+assert    finally  lambda     try
+break     false    nonlocal   with 
+class     for      None       while 
+continue  from     not        yield
+def       global   or
+del       if       pass 
+elif      import   raise
+
+Keywords ko identifier ka name nahi de sakte 
+
+NOTE:-
+Python is a case sensitive language 
+SQL is not a case sensitive language 
+
+Tokens:-
+A token is the smallest meaningful unit in a Python program. Python code is interpreted by breaking it into tokens.
+
+Python has the following types of tokens:-
+
+1. Keywords 
+2. Identifiers
+3. Literals (Values) - String Literals: "Hello", 'Deep'
+                       Numeric Literals: 10, 20.5, 3j
+                       Boolean Literals: True, False
+                       Special Literal: None 
+                       Collection Literals: [1, 2, 3], (1, 2), {1, 2}, {"name": "Deep"}
+4. Operators
+5. Punctuators - Symbols used to organize and separate code.
+                 Examples: (), [], {}, :, ,, . and ;
+
+Comments:-
+
+# single line comment 
+""" This is multi line comment"""
+
+Input in python:-
+input() statement is used to accept values (using keyboard) from users
+
+string input
+
+name = input("name : ")
+print(name)
+
+int input
+
+age = int(input("age : "))
+print(age)
+
+float input 
+
+price = float(input("price : "))
+print(price)
+
+Operators:-
+Operators in python are special symbols or keyword used to perform operations on variables and values. 
+Python supports several types of operators, including arithmetic, comparison, logical, assignment, and more 
+
+Types of operator:-
+
+1. Arithmetic operator              (+ - * / // % **)
+2. Relational / Comparison operator (== != > < >= <=)
+3. Assignment operator              (= -= += *= /= %= //= **=)     //Add and assign 
+4. Logical operator                 (not, and, or)
+5. Membership operator              (in, not in)
+6. Identity operator                (is, is not)
+7. Bitwise operator                 (&, |, ^)
+
+Example of comparison and logical operator:-
+
+age = 22
+has_license = True 
+
+if age >= 18 and has_license:
+    print("You can drive")
+else:
+    print("Can't drive")
+
+5. Membership operator:-
+   Membership operators test for membership in a sequence (eg. strings, lists)
+
+Example:- 
+
+my_list = [1,2,3,4,5]
+
+#Check if an item is in the list 
+print(3 in my_list)   
+
+#Check if an item is not in the list
+print(6 not in my_list)
+
+6. Identity operator:-
+   Identity operators compare the memory locations of two objects
+
+Example:-
+
+x = [1,2,3]
+y = [1,2,3]
+z = x
+
+#Check if two variables point to the same object 
+print(x is z)     #True
+
+#Check if two variable do not point to the same object 
+print(x is not y)    #True
+
+#Even though x and y have the same content, they are different objects 
+print(x == y)     #True (same content)
+print(x is y)     #False (different objects)
+
+Example:-
+Check if number is between 10 and 50?
+
+num = int(input("Enter a number: "))
+
+if (num >= 10 and num <= 50):
+   print("This number is b/w 10 and 50")
+else:
+   print("This number does not exist b/w 10 and 50")
+
+Ternary condition (One linear if-else):-
+
+Syntax:-
+variable = value_if_true if condition else value_if_false
+
+Example:-
+
+age = 18 
+status = "Adult" if age >=18 else "Minor"
+print(status)
+
+Boolean Truthy / Falsy:-
+
+In Python,
+1 → Truthy (treated as True)
+0 → Falsy (treated as False)
+
+mom_enters = 1
+if mom_enters:
+   print("Close PUBG")
+else:
+   print("Continue gaming")
+
+Conditional statements:-
+
+if statement
+if-else statement
+if-elif-else statement
+Nested if statement
+
+Example:-
+
+mom_enters = True
+if mom_enters:
+   print("Close PUBG")
+else:
+   print("Continue gaming")
+
+if - Checks the condition and runs the block if true 
+else - Runs if the condition is False 
+
+Type conversion:-
+Type conversion in Python is the process of changing a value from one data type to another.
+
+Python supports two types of type conversion:-
+
+1. Implicit Conversion:-
+   Python automatically converts one data type into another without requiring the programmer to do it manually.
+
+Example:-
+a = 10       # int
+b = 2.5      # float
+c = a + b
+
+print(c)
+print(type(c))
+
+12.5
+<class 'float'>
+
+2. Explicit Conversion:-
+   The programmer manually converts one data type into another using built-in functions.
+
+Example:-
+a = "100"
+b = int(a)
+
+print(b)
+print(type(b))
+
+100
+<class 'int'>
+
+Q. WAP to input 2 numbers and print their sum 
+Q. WAP to input side of a square and print its area
+Q. WAP to input 2 floating numbers and print their average
+Q. WAP to input 2 numbers, a and b - Print True if a is greater than or equal to b, if not False 
