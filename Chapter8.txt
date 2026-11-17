@@ -1,0 +1,1498 @@
+Chapter8 - OOPs
+
+OOPs:-
+To map with real world scenarios, we started using objects in code
+This is called object oriented programming 
+We use OOPs to reduce redundancy and to increase reusability 
+
+Class and Object:-
+Class is a blurprint for creating objects. Objects are instance of class 
+A class is a blueprint or template used to create objects. It defines the structure (data + functions)
+
+Object    - An object is an instance of a class. It has actual values and can use the functions defined in the class 
+Attribute - Attributes are the variables or data inside an object (like name, age, color)
+Method    - Methods are the functions defined inside a class that perform actions on object data
+
+class - car
+object - C1, C2, C3
+Attributes/properties - color, model
+methods/features/actions - move, open door, close door
+
+Example:-
+class Employee:
+    pass
+
+employ_1 = Employee()
+employ_2 = Employee()
+
+print(employ_1)
+
+<__main__.Employee object at 0x00000232ACC65910>
+
+Example:-
+class Employee:
+    name = "Harish"
+    id = 11
+
+employ_1 = Employee()
+employ_2 = Employee()
+
+print(employ_1.name, employ_1.id)
+print(employ_2.name, employ_2.id)
+
+Harish 11
+Harish 11
+
+Example:-
+#creating class 
+class Student:
+    name = "Karan Kumar"
+
+#creating object(instance or instance of class)
+s1 = Student()     #constructor ko call karne ke liye use karte hai 
+print(s1.name)
+
+Karan Kumar
+
+Example:-
+class Student:
+    name = "Karan Kumar"
+
+s1 = Student()     
+print(s1.name)
+
+s2 = Student()     
+print(s2.name)
+
+Karan Kumar
+Karan Kumar
+
+Example:-
+class Car:                 class Car:
+    color = "blue"             color = "blue"
+                               brand = "mercedes"
+car1 = Car()    
+print(car1.color)           car1 = Car()
+                            print(car1.color)
+                            print(car1.brand) 
+
+blue                        blue
+                            mercedes
+
+__init__ function:-
+
+Constructor:-
+All classes have a function called __init__(), which is always executed when the object is being initiated 
+
+Example:-
+class Employee:
+    #method
+    def __init__(self, f_name, f_id, f_salary):   #__init__ method called constructor 
+        #creating properties (also called attributes or instance variables) inside the constructor using self
+        self.name = f_name
+        self.id = f_id
+        self.salary = f_salary
+        
+#creating objects
+employ_1 = Employee("Harish", 13, 50000)
+print(employ_1.name, employ_1.id, employ_1.salary)
+
+employ_2 = Employee("Anjali", 14, 45000)
+print(employ_2.name, employ_2.id, employ_2.salary)
+
+Harish 13 50000
+Anjali 14 45000
+
+NOTE:-
+f_name, f_id, f_salary are parameters.
+self.name, self.id, self.salary are instance properties.
+
+Example:-
+class Student:
+    name = "Karan"
+    def __init__(self):
+        print("adding new student in database")
+
+s1 = Student()
+
+adding new student in database
+
+Example:-
+class Student:                                         class Student:
+    name = "Karan"                                         name = "Karan"
+    def __init__(self):                                    def __init__(self):
+        print(self)                                            print(self)
+        print("adding new student in database")                print("adding new student in database")
+
+s1 = Student()                                         s1 = Student()
+                                                       print(s1)
+
+<__main__.Student object at 0x000001EC983957C0>        <__main__.Student object at 0x000001FD61685820>
+adding new student in database                         adding new student in database
+                                                       <__main__.Student object at 0x000001FD61685820>
+
+Example:-
+#creating class 
+class Student:
+    def __init__(self, fullname):
+        self.name = fullname 
+
+#creating object 
+s1 = Student("Karan")
+print(s1.name)
+
+Karan 
+
+--> The self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
+
+Example:-
+class Student:
+    def __init__(self, fullname):
+        self.name = fullname 
+        print("adding new student in database")
+
+s1 = Student("Karan")
+print(s1.name)
+
+s2 = Student("Arjun")
+print(s2.name)
+
+adding new student in database
+Karan
+adding new student in database
+Arjun
+
+Example:-
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+person = Person("Alice", 30)
+print(person.name, person.age)
+
+Alice 30
+
+Example:-
+class Student:
+    def __init__(self, name, marks):
+        self.name = name                        #self.name = instance attribute 
+        self.marks = marks
+        print("adding new student in database")
+
+s1 = Student("Karan", 97)
+print(s1.name, s1.marks)
+
+s2 = Student("Arjun", 88)
+print(s2.name, s2.marks)
+
+adding new student in database
+Karan 97
+adding new student in database
+Arjun 88
+
+--> Types of constructor:-
+
+1. Default constructor 
+2. Parameterized constructor
+
+
+Example:-
+class Student:
+    #default constructors 
+    def __init__(self):
+        pass
+    
+    #parameterized constructor 
+    def __init__(self, name, marks):
+        self.name = name 
+        self.marks = marks
+        print("adding new student in database")
+
+s1 = Student("Karan", 97)
+print(s1.name, s1.marks)
+
+s2 = Student("Arjun", 88)
+print(s2.name, s2.marks)
+
+adding new student in database
+Karan 97
+adding new student in database
+Arjun 88
+
+--> Class and instance attribute:-
+
+class.attr
+obj.attr
+
+Example:-
+class Student:                                        class Student:
+    college_name = "ABC college"                          college_name = "ABC college"
+
+    def __init__(self, name, marks):                      def __init__(self, name, marks):
+        self.name = name                                      self.name = name 
+        self.marks = marks                                    self.marks = marks
+        print("adding new student in database")               print("adding new student in database")
+
+s1 = Student("Karan", 97)                             s1 = Student("Karan", 97)
+print(s1.name, s1.marks)                              print(s1.name, s1.marks)
+
+s2 = Student("Arjun", 88)                             s2 = Student("Arjun", 88)
+print(s2.name, s2.marks)                              print(s2.name, s2.marks)
+print(s2.college_name)                                print(Student.college_name)
+
+adding new student in database                        adding new student in database
+Karan 97                                              Karan 97
+adding new student in database                        adding new student in database
+Arjun 88                                              Arjun 88
+ABC college                                           ABC college
+
+Example:-
+class Student:
+    college_name = "ABC college"
+    name = "anonymous"
+
+    def __init__(self, name, marks):
+        self.name = name 
+        self.marks = marks
+        print("adding new student in database")
+
+s1 = Student("Karan", 97)
+print(s1.name)
+
+adding new student in database
+Karan
+
+Methods:-
+Methods are functions that belong to objects 
+
+Example:-
+class Student:
+    def __init__(self, fullname):
+        self.name = fullname 
+
+    def hello(self):
+        print("hello", self.name)
+
+s1 = Student("Karan")
+s1.hello()
+
+hello Karan
+
+Example:-
+class Student:                              class Student:
+    college_name = "ABC college"                college_name = "ABC college"
+
+    def __init__(self, name, marks):        def __init__(self, name, marks):
+        self.name = name                        self.name = name 
+        self.marks = marks                      self.marks = marks
+
+    def welcome(self):                      def welcome(self):
+        print("Welcome student")                print("Welcome student", self.name)
+
+s1 = Student("Karan", 97)                   s1 = Student("Karan", 97)
+s1.welcome()                                s1.welcome()
+
+Welcome student                             Welcome student Karan
+
+Example:-
+class Student:
+    college_name = "ABC college"
+
+    def __init__(self, name, marks):
+        self.name = name 
+        self.marks = marks
+
+    def welcome(self):
+        print("Welcome student", self.name)
+
+    def get_marks(self):
+        return self.marks
+
+s1 = Student("Karan", 97)
+s1.welcome()
+print(s1.get_marks())
+
+Welcome student Karan
+97
+
+Q. Create student class that takes name and marks of 3 students as arguments in constructor 
+   Then create a method to print the average 
+
+class Student:                                                      class Student:
+    def __init__(self, name, marks):                                    def __init__(self, name, marks):
+        self.name = name                                                    self.name = name
+        self.marks = marks                                                  self.marks = marks
+
+    def get_avg(self):                                                  def get_avg(self):
+        sum = 0                                                             sum = 0
+        for val in self.marks:                                              for val in self.marks:
+            sum += val                                                          sum += val
+        print("Hi", self.name, "your avg score is : ", sum/3)               print("Hi", self.name, "your avg score is : ", sum/3)
+
+s1 = Student("Tony Stark", [99,98,97])                              s1 = Student("Tony Stark", [99,98,97])
+s1.get_avg()                                                        s1.get_avg()
+
+                                                                    s1.name = "Ironman"
+                                                                    s1.get_avg()
+
+Hi Tony Stark your avg score is : 98.0                              Hi Tony Stark your avg score is : 98.0
+                                                                    Hi Ironman your avg score is : 98.0
+
+Static methods:-
+A static method is a method inside a class that does not use self 
+It works like a normal function but is placed inside a class for better organization 
+
+Methods that don't use the self parameter (work at class level)
+
+In Python, a static method is a method that belongs to a class but does not need an object or access to the class itself.
+We create a static method using the @staticmethod decorator.
+
+Decorators allow us to wrap another function in order to extend the behaviour of the wrapped function, without permanently modifying it 
+
+Example:-
+class Student:
+    @staticmethod            #decorator 
+    def college():
+        print("ABC college")
+
+Student.college()
+
+ABC college
+
+Static Method with Parameters:-
+
+Example:-
+class Data:
+    @staticmethod 
+    def convert(text):
+        return text.lower()
+    
+print(Data.convert("HELLO DEEP GARG"))
+
+hello deep garg
+
+Example:-
+class Calculator:
+
+    @staticmethod
+    def add(a, b):
+        print("Sum =", a + b)
+
+Calculator.add(10, 20)
+Calculator.add(5, 15)
+
+Sum = 30
+Sum = 20
+
+Example:-
+class Calculator:
+
+    @staticmethod
+    def multiply(a, b):
+        return a * b
+
+result = Calculator.multiply(4, 5)
+print(result)
+
+20
+
+Example:-
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    @staticmethod 
+    def hello():
+        print("hello")
+
+    def get_avg(self):
+        sum = 0
+        for val in self.marks:
+            sum += val
+        print("Hi", self.name, "your avg score is :", sum/3)
+
+s1 = Student("Tony Stark", [99,98,97])
+s1.get_avg()
+s1.hello()
+
+s1.name = "Ironman"
+s1.get_avg()
+
+Hi Tony Stark your avg score is : 98.0
+hello
+Hi Ironman your avg score is : 98.0
+
+Abstraction:-
+Hiding the impementation details of a class and only showing the essential features to the user 
+
+Encapsulation:-
+Wrapping data and functions into a single unit (object)
+
+4 pillars of OOPs - Abstraction 
+                  - Encapsulation 
+                  - Inheritance 
+                  - Polymorphism 
+
+Instance attributes - 
+Store information belonging to an object.
+
+Instance attributes are variables that store data for a particular object
+In your code, these three lines create instance attributes:
+self.acc = False
+self.brk = False
+self.clutch = False
+They are called instance attributes because they belong to a particular object, such as car1.
+
+Instance method - 
+A function inside a class that works with an object's data
+
+This is your instance method:
+def start(self):
+    self.clutch = True
+    self.acc = True
+    print("Car started..")
+It is an instance method because it uses self to access and modify the object's attributes.
+
+Example:-
+class Car:
+    def __init__(self):
+        self.acc = False
+        self.brk = False
+        self.clutch = False
+
+    def start(self):
+        self.clutch = True 
+        self.acc = True 
+        print("Car started..")
+
+car1 = Car()
+car1.start()
+
+Car started..
+
+Q. Create account class with 2 attributes - balance and account no. 
+   Create methods for debit, credit and printing the balance 
+
+class Account:
+    def __init__(self, bal, acc):
+        self.balance = bal
+        self.account_no = acc
+
+acc1 = Account(10000, 12345)
+print(acc1.balance)
+print(acc1.account_no)
+
+10000
+12345
+
+Example:-
+class Account:
+    def __init__(self, bal, acc):
+        self.balance = bal
+        self.account_no = acc
+
+    def debit(self, amount):
+        self.balance -= amount 
+        print("Rs.", amount, "was debited")
+        print("Total balance =", self.get_balance())
+
+    def credit(self, amount):
+        self.balance += amount 
+        print("Rs.", amount, "was credited")
+        print("Total balance =", self.get_balance())
+
+    def get_balance(self):
+        return self.balance 
+
+acc1 = Account(10000, 12345)
+acc1.debit(1000)
+acc1.credit(500)
+acc1.credit(40000)
+acc1.debit(10000)
+
+Rs. 1000 was debited
+Total balance = 9000
+Rs. 500 was credited
+Total balance = 9500
+Rs. 40000 was credited
+Total balance = 49500
+Rs. 10000 was debited
+Total balance = 39500
+
+del keyword:-
+Used to delete object properties and object itself 
+
+del s1.name 
+del s1
+
+Example:-
+class Student:                                        class Student:                                         class Student:
+    def __init__(self, name):                             def __init__(self, name):                              def __init__(self, name):
+        self.name = name                                      self.name = name                                       self.name = name 
+
+s1 = Student("Shradha")                               s1 = Student("Shradha")                                s1 = Student("Shradha")
+del s1                                                print(s1)                                              print(s1.name)
+print(s1)                                             del s1                                                 del s1.name
+                                                      print(s1)                                              print(s1.name) 
+
+
+NameError: name 's1' is not defined                   <__main__.Student object at 0x000001AB61B158E0>        Shradha
+                                                      NameError: name 's1' is not defined                    AttributeError: 'Student' object has no attribute 'name'
+
+Private(like) attributes and methods:-
+
+Conceptual implementations:-
+Private attributes and methods are meant to be used only within the class and are not accessible from outside the class 
+
+The double underscore (__) at the beginning tells Python to apply name mangling.
+Python internally changes the attribute name to make accidental direct access from outside the class more difficult.
+
+Example:-
+class Account:                                        class Account:
+    def __init__(self, acc_no, acc_pass):                 def __init__(self, acc_no, acc_pass):
+        self.acc_no = acc_no                                  self.acc_no = acc_no
+        self.acc_pass = acc_pass                              self.__acc_pass = acc_pass
+
+acc1 = Account("12345", "abcde")                      acc1 = Account("12345", "abcde")
+print(acc1.acc_no)                                    print(acc1.acc_no)
+print(acc1.acc_pass)                                  print(acc1.__acc_pass)
+
+12345                                                 12345
+abcde                                                 AttributeError: 'Account' object has no attribute '__acc_pass'
+
+Example:-
+class Account:
+    def __init__(self, acc_no, acc_pass):
+        self.acc_no = acc_no
+        self.__acc_pass = acc_pass
+
+    def reset_pass(self):
+        print(self.__acc_pass)
+
+acc1 = Account("12345", "abcde")
+print(acc1.acc_no)
+print(acc1.reset_pass())
+
+12345
+abcde
+None
+
+The double underscore __ tells Python to change the attribute's internal name.
+Python internally changes:-
+__name → _Person__name
+
+print(p1.__name)
+Python searches for __name, but its internal name is _Person__name. Therefore, you get an error.
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+p1 = Person()
+print(p1.__name)
+
+AttributeError: 'Person' object has no attribute '__name'
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+p1 = Person()
+print(p1._Person__name)
+
+anonymous
+
+NOTE:-
+In Python, a variable starting with double underscores inside a class is treated as a private attribute through a feature called name mangling
+
+Because the method name starts with double underscores, Python applies name mangling. Its internal name becomes _Person__hello.
+Therefore, p1.__hello() cannot find the method by that name.
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+    def __hello():
+        print("hello person!")
+
+p1 = Person()
+print(p1.__hello())
+
+AttributeError: 'Person' object has no attribute '__hello'
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+    def __hello(self):
+        print("hello person!")
+
+p1 = Person()
+p1._Person__hello()
+
+hello person!
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+    def hello(self):
+        print("hello person!")
+
+p1 = Person()
+p1.hello()
+
+hello person!
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+    def __hello(self):
+        print("hello person!")
+
+    def welcome(self):
+        self.__hello()
+
+p1 = Person()
+print(p1.welcome())
+
+hello person!
+None
+
+NOTE:-
+self.__hello() calls the private-like method.
+But welcome() does not return anything.
+Python automatically returns None when a function has no return statement.
+
+Example:-
+class Person:
+    __name = "anonymous"
+
+    def __hello(self):
+        print("hello person!")
+
+    def welcome(self):
+        self.__hello()
+
+p1 = Person()
+p1.welcome()
+
+hello person!
+
+Inheritance:-
+When one class (child/derived) derives the properties and methods of another class (parent/base)
+One class inherits the properties of another 
+
+class Car:
+    ............
+
+class ToyotaCar(Car):
+    ............
+
+Example:-
+class Car:
+    @staticmethod
+    def start():
+        print("Car started..")
+
+    @staticmethod
+    def stop():
+        print("Car stopped.")
+
+class ToyotaCar(Car):
+    def __init__(self, name):
+        self.name = name
+
+car1 = ToyotaCar("Fortuner")
+car2 = ToyotaCar("prius")
+
+print(car1.name)
+print(car1.start())
+
+Fortuner
+Car started..
+None
+
+Example:-
+class Car:
+    color = "black"
+    @staticmethod
+    def start():
+        print("Car started..")
+
+    @staticmethod
+    def stop():
+        print("Car stopped.")
+
+class ToyotaCar(Car):
+    def __init__(self, name):
+        self.name = name
+
+car1 = ToyotaCar("Fortuner")
+car2 = ToyotaCar("prius")
+
+print(car1.color)
+
+black
+
+Example:-
+class Animal:                           #Parent class 
+    def speak(self):
+        print("I can make a sound")
+        
+class Dog(Animal):                      #child class 
+    def bark(self):
+        print("woof woof")
+        
+d = Dog()
+d.speak()
+
+I can make a sound
+
+Inheritance - Single inheritance
+            - Multi level inheritance 
+            - Multiple inheritance 
+            - Hierarchical inheritance 
+            - Hybrid inheritance 
+
+Example:-
+class Car:
+    @staticmethod
+    def start():
+        print("Car started..")
+
+    @staticmethod
+    def stop():
+        print("Car stopped.")
+
+class ToyotaCar(Car):
+    def __init__(self, brand):
+        self.brand = brand
+
+class Fortuner(ToyotoCar):
+    def __init__(self, type):
+        self.type = type
+
+car1 = Fortuner("Diesel")
+car1.start()
+
+Car started..
+
+Example:-
+class A:
+    varA = "Welcome to class A"
+
+class B:
+    varB = "Welcome to class B"
+
+class C(A,B):
+    varC = "Welcome to class C"
+
+c1 = C()
+print(c1.varC)
+print(c1.varB)
+print(c1.varA)
+
+Welcome to class C
+Welcome to class B
+Welcome to class A
+
+Example:-
+class person:
+    def details(self):
+        print("I am a person")
+        
+class employee(person):
+    def work(self):
+        print("I am a employee")
+        
+class manager(employee):
+    def manage(self):
+        print("I am a manager")
+        
+m = manager()
+m.details()
+m.work()
+m.manage()
+
+I am a person
+I am a employee
+I am a manager
+
+Super method:-
+super() method is used to access methods of the parent class 
+
+Example:-
+class Car:
+    def __init__(self, type):
+        self.type = type                #self.type = type	Saves that value inside the object
+
+    @staticmethod
+    def start():
+        print("Car started..")
+
+    @staticmethod
+    def stop():
+        print("Car stopped.")
+
+class ToyotaCar(Car):
+    def __init__(self, name, type):
+        super().__init__(type)         #Call the __init__() method of the parent class Car and pass it the value of type
+        self.name = name 
+        super().start()
+
+car1 = ToyotaCar("prius", "electric")
+print(car1.type)
+
+Car started..
+electric
+
+class method:-
+Has access to the class itself, not to instance. It uses cls instead of self 
+Does not need to create an object, but when create constructor or normal self then need to create an object
+A class method is bound to the class and receives the class as an implicit first argument 
+
+NOTE:-
+static method can't access or modify class state and generally for utility
+
+class Student:
+    @classmethod     #decorator 
+    def college(cls):
+        pass 
+
+Example:-
+class Student:
+    school = "ABC School"
+    
+    @classmethod 
+    def get_school(cls):
+        return cls.school
+    
+print(Student.get_school())
+
+ABC School
+
+Example:-
+class Person:                            class Person:                           class Person:                               class Person:        
+    name = "anonymous"                       name = "anonymous"                      name = "anonymous"                          name = "anonymous"
+
+    def changeName(self, name):              def changeName(self, name):             def changeName(self, name):                 @classmethod
+        self.name = name                         Person.name = name                      self.__class__.name = "Rahul"           def changeName(cls, name):
+                                                                                                                                     cls.name = name
+p1.Person()                              p1.Person()                             p1.Person()                                 
+p1.changeName("Rahul Kumar")             p1.changeName("Rahul Kumar")            p1.changeName("Rahul Kumar")                p1.Person()
+                                                                                                                             p1.changeName("Rahul Kumar")
+print(pl.name)                           print(pl.name)                          print(pl.name)                              
+print(Person.name)                       print(Person.name)                      print(Person.name)                          print(pl.name)
+                                                                                                                             print(Person.name)
+
+Rahul Kumar                              Rahul Kumar                             Rahul                                       Rahul Kumar
+Anonymous                                Rahul Kumar                             Rahul                                       Rahul Kumar
+
+NOTE:-
+self -> first argument 
+but in class method we use first argument as cls 
+
+NOTE:-
+1. Static method:-
+   Jo class ya instance dono mein se kisi ke bhi attribute ko access nh karte 
+
+2. class method (cls)
+
+3. instance method (self)
+
+Property:-
+We use @property decorator on any method in the class to use the method as a property
+
+Example:-
+class Student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem 
+        self.math = math 
+        self.percentage = str((self.phy + self.chem + self.math) / 3) + "%"
+
+stu1 = Student(98, 97, 99)
+print(stu1.percentage)
+
+98.0%
+
+Example:-
+class Student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem 
+        self.math = math 
+        self.percentage = str((self.phy + self.chem + self.math) / 3) + "%"
+
+stu1 = Student(98, 97, 99)
+print(stu1.percentage)
+stu1.phy = 86
+print(stu1.phy)
+print(stu1.percentage)
+
+98.0%
+86
+98.0%
+
+NOTE:-
+Resut is same 
+Because percentage was calculated only once when the object was created. It doesn't automatically update when you change the marks
+Better approach: Using @property
+
+Example:-
+class Student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem 
+        self.math = math 
+        self.percentage = str((self.phy + self.chem + self.math) / 3) + "%"
+
+    def calcPercentage(self):
+        self.percentage = str((self.phy + self.chem + self.math) / 3) + "%"
+
+stu1 = Student(98, 97, 99)
+print(stu1.percentage)
+stu1.phy = 86
+print(stu1.phy)
+stu1.calcPercentage()
+print(stu1.percentage)
+
+98.0%
+86
+94.0%
+
+Example:-
+class Student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem 
+        self.math = math 
+
+    @property 
+    def percentage(self):
+        return str((self.phy + self.chem + self.math) / 3) + "%"
+
+stu1 = Student(98, 97, 99)
+print(stu1.percentage)
+stu1.phy = 86
+print(stu1.percentage)
+
+98.0%
+94.0%
+
+Polymorphism : operator overloading 
+When the same operator is allowed to have different meaning according to the context 
+
+Polymorphism = Many forms 
+One function / method behaves differently depending on the object
+Polymorphism allows the same function or method call to behave differently depending on the object.
+
+Example:-
+class Bird:
+    def sound(self):
+        print("chirp chirp")
+    
+class Cat:
+    def sound(self):
+        print("meow")
+     
+def animal_sound(animal):
+    animal.sound()
+
+animal_sound(Bird())
+animal_sound(Cat())
+
+chirp chirp
+meow
+
+Example:-
+print(1+2)
+print("apna" + "college")   #concatenate 
+print([1,2,3] + [4,5,6])    #merge 
+
+3
+apnacollege
+[1, 2, 3, 4, 5, 6]
+
+Example:-
+print(1+2)
+print(type(1))
+
+3
+<class 'int'>
+
+Example:-
+print("apna" + "college")
+print(type("apna"))
+
+apnacollege
+<class 'str'>
+
+Example:-
+print([1,2,3] + [4,5,6])
+print(type([1,2,3]))
+
+[1, 2, 3, 4, 5, 6]
+<class 'list'>
+
+Complex numbers:- 
+
+class Complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img 
+
+    def showNumber(self):
+        print(self.real, "i +", self.img, "j")
+
+num1 = Complex(1,3)
+num1.showNumber()
+num2 = Complex(4,6)
+num2.showNumber()
+
+1 i + 3 j
+4 i + 6 j
+
+NOTE:-
+dunder functions (__)
+
+Operators and dunder functions:-
+
+a + b   a.__add__(b)
+a - b   a.__sub__(b)
+a * b   a.__mul__(b)
+a / b   a.__truediv__(b)
+a % b   a.__mod__(b)
+
+Dunder Methods:-
+__init__
+__str__         = it will return string representation of an object - when u will print it 
+__len__         = Length of student 
+__eq__          = Compare marks using ==             Who scored equal?
+__add__         = Add two students  Add total marks of two students 
+__lt__and__gt__ = Compare using < and >
+__contains__    = Check if mark exists
+
+Example:-
+class Complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img 
+
+    def showNumber(self):
+        print(self.real, "i +", self.img, "j")
+
+    def add(self, num2):
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img 
+        return Complex(newReal, newImg)
+
+num1 = Complex(1,3)
+num1.showNumber()
+num2 = Complex(4,6)
+num2.showNumber()
+num3 = num1.add(num2)
+num3.showNumber()
+
+1 i + 3 j
+4 i + 6 j
+5 i + 9 j
+
+Example:-
+class Complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img 
+
+    def showNumber(self):
+        print(self.real, "i +", self.img, "j")
+
+    def __add__(self, num2):              #dunder function 
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img 
+        return Complex(newReal, newImg)
+
+num1 = Complex(1,3)
+num1.showNumber()
+num2 = Complex(4,6)
+num2.showNumber()
+num3 = num1 + num2
+num3.showNumber()
+
+1 i + 3 j
+4 i + 6 j
+5 i + 9 j
+
+Example:-
+class Complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img 
+
+    def showNumber(self):
+        print(self.real, "i +", self.img, "j")
+
+    def __add__(self, num2):              #dunder function 
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img 
+        return Complex(newReal, newImg)
+
+    def __sub__(self, num2):
+        newReal = self.real - num2.real
+        newImg = self.img - num2.img 
+        return Complex(newReal, newImg)
+
+num1 = Complex(1,3)
+num1.showNumber()
+num2 = Complex(4,6)
+num2.showNumber()
+num3 = num1 - num2
+num3.showNumber()
+
+1 i + 3 j
+4 i + 6 j
+-3 i + -3 j
+
+Example:-
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+        
+    def __str__(self):
+        return f"Student data: {self.name}, marks: {self.marks}"
+    
+    def __len__(self):
+        return len(self.marks)
+    
+    def __eq__(self, other):
+        return sum(self.marks) == sum(other.marks)
+    
+    def __add__(self, other):
+        return sum(self.marks) + sum(other.marks)
+    
+    def __gt__(self, other):
+            return sum(self.marks) > sum(other.marks)
+        
+    def __lt__(self, other):
+            return sum(self.marks) < sum(other.marks)
+        
+    def __contains__(self, other):
+        return other in self.marks
+    
+s1 = Student("Arpit", [10, 25, 30])
+s2 = Student("Anjali", [10, 90, 30])
+
+print(s1)
+print(len(s1))
+print(len(s2))
+print(s1 == s2)
+print(s1 + s2)
+print(s1 > s2)
+print(s1 < s2)
+print(30 in s2)
+
+Student data: Arpit, marks: [10, 25, 30]
+3
+3
+False
+195
+False
+True
+True
+
+Q. Define a cirlcle class to create a circle with radius r using the construction 
+   Define an Area() method of the class which calculates the area of the circle     
+   Define a perimeter() method of the class which allows you to calculate the perimeter of the circle 
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius 
+
+    def area(self):
+        return (22/7) * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * (22/7) * self.radius
+
+c1 = Circle(21)
+print(c1.area())
+print(c1.perimeter())
+
+1386.0
+132.0
+
+Q. Define a Employee class with attributes role, department and salary. This class also has a showDetails() method 
+   Create an Employee class that inherits properties from Employee and has additional : name and age 
+
+class Employee:
+    def __init__(self, role, dept, salary):
+        self.role = role
+        self.dept = dept 
+        self.salary = salary 
+
+    def showDetails(self):
+        print("Role :", self.role)
+        print("Dept :", self.dept)
+        print("Salary :", self.salary)
+
+e1 = Employee("Accountant", "Finance", "60000")
+e1.showDetails()
+
+Role : Accountant
+Dept : Finance
+Salary : 60000
+
+Example:-
+class Employee:
+    def __init__(self, role, dept, salary):
+        self.role = role
+        self.dept = dept 
+        self.salary = salary 
+
+    def showDetails(self):
+        print("Role :", self.role)
+        print("Dept :", self.dept)
+        print("Salary :", self.salary)
+
+class Engineer(Employee):
+    def __init__(self, name, age):
+        self.name = name 
+        self.age = age 
+        super().__init__("Engineer", "IT", "75000")
+
+engg1 = Engineer("Elon Musk", 40)
+engg1.showDetails()
+
+Role : Engineer
+Dept : IT
+Salary : 75000
+
+Example:-
+class Employee:
+    def __init__(self, role, dept, salary):
+        self.role = role
+        self.dept = dept
+        self.salary = salary
+
+    def showDetails(self):
+        print("Role:", self.role)
+        print("Dept:", self.dept)
+        print("Salary:", self.salary)
+
+class Person(Employee):
+    def __init__(self, name, age, role, dept, salary):
+        super().__init__(role, dept, salary)
+        self.name = name
+        self.age = age
+
+    def showDetails(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        super().showDetails()
+
+p1 = Person("Deep", 20, "Data Analyst", "IT", 60000)
+p1.showDetails()
+
+Name: Deep
+Age: 20
+Role: Data Analyst
+Dept: IT
+Salary: 60000
+
+Q. Create a class called Order which stores items and its price
+   Use dunder function __gt__() to convey that order1 > order2 if price of order1 > price of order2
+
+class Order:
+    def __init__(self, item, price):
+        self.item = item 
+        self.price = price
+
+    def __gt__(self, odr2):
+        return self.price > odr2.price
+
+odr1 = Order("Chips", 20)
+odr2 = Order("Tea", 15)
+print(odr1 > odr2)
+
+True 
+
+Access Modifiers:-
+Access Modeifiers in python are used to control the accessibility (visibility) of class attributes and methods 
+public, protected, private 
+
+Public members:-
+Accessible from anywhere in your code - inside or outside the class 
+
+Example:-
+class Car:
+    def __init__(self):
+        self.brand = "Toyota"
+        
+car = Car()
+print(car.brand)
+
+Toyota
+
+Protected members:-
+Should only be accessed within the class or its subclasses. 
+In python, it's just a convention using a single underscore(_)
+
+Example:-
+class Vehicle:
+    def __init__(self):
+        self._engine = "petrol"
+        
+class Bike(Vehicle):
+    def show_engine(self):
+        print("Engine type: ", self._engine)
+        
+b = Bike()
+b.show_engine()
+
+print(b._engine)
+
+Engine type:  petrol
+petrol
+
+Important concept:-
+In python, self._engine is protected by convention 
+that means - we are saying "please don't access it from outside", but python won't stop you if you do
+
+In Java/C++
+Protected variable cannot be accessed outside the class or subclass 
+print(b._engine)
+
+Private members:-
+Can only be accessed inside the class. Python uses double underscore(__)
+
+Example:-
+class BankAccount:
+    def __init__(self):
+        self.__balance = 10000
+        
+    def get_balance(self):
+        return self.__balance
+    
+acc = BankAccount()
+print(acc.get_balance())    #10000
+print(acc.__balance)        #show error - AttributeError: 'BankAccount' object has no attribute '__balance'. Did you mean: 'get_balance'?
+
+Encapsulation:-
+Protecting data inside the class using private variables 
+
+Example:-
+class BankAccount:
+    def __init__(self):
+        self.__balance = 0   #private
+        
+    def deposit(self, amount):
+        self.__balance = self.__balance + amount
+        
+    def get_balance(self):
+        return self.__balance
+    
+acc = BankAccount()
+acc.deposit(10000)
+print(acc.get_balance())   #10000
+print(acc.__balance)       #show error - AttributeError: 'BankAccount' object has no attribute '__balance'. Did you mean: 'get_balance'?
+
+Abstraction:-
+Show only essential function and hide complex details 
+
+Encapsulation        Abstraction 
+
+hide data            hide data 
+sensitive data       unnecessary / confusing / complex data
+bank account         car machinary 
+password 
+
+Example:-
+from abc import ABC, abstractmethod
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        print("Complex data")
+        
+class Car(Vehicle):
+    def start(self):
+        print("Car started")
+        
+c = Car()
+c.start()
+
+Car started
+
+Operations on object in python:-
+Create object:-
+
+Example:-
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+#Creating an object 
+s1 = Student("Riya", 20)
+print(s1.name, s1.age)
+
+Riya 20
+
+Update object attribute:-
+
+object    - s1
+attribute - Riya, 20
+
+Example:-
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+#Creating an object 
+s1 = Student("Riya", 20)
+print(s1.name, s1.age)
+
+s1.age = 22
+print("Updated age ", s1.age)
+
+Riya 20
+Updated age  22
+
+Delete object attribute:-
+
+Example:-
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+#Creating an object 
+s1 = Student("Riya", 20)
+print(s1.name, s1.age)
+
+del s1.name
+print(s1.name)
+
+AttributeError: 'Student' object has no attribute 'name'
+
+Delete the entire object:-
+
+Example:-
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+#Creating an object 
+s1 = Student("Riya", 20)
+print(s1.name, s1.age)
+
+del s1
+print(s1.name)
+
+NameError: name 's1' is not defined

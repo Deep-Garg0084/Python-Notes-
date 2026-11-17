@@ -1,0 +1,602 @@
+Loops:-
+Loops are used to repeat instructions 
+Loops are used to repeat a block of code multiple times. 
+Perfect for automation, data processing, and building AI systems
+Python provides two main types of loops - for and while loop
+
+while loop:-
+
+while condition:
+    #some work 
+
+Example:
+count = 1                                       count = 1
+while count <= 5:    #stopping condition        while count <= 5:
+    print("Hello")                                  print("Hello")
+    count += 1                                      count += 1
+                                                print(count)
+Hello  
+Hello                                           Hello
+Hello                                           Hello
+Hello                                           Hello
+Hello                                           Hello
+                                                Hello
+                                                6
+
+Example:-
+i = 1                                           i = 1                        i = 1
+while i <= 100:                                 while i <= 100000:           while i <= 100000:
+    print("apnacollege")                            print("apnacollege")        print("apnacollege", i)
+    i += 1                                          i += 1                      i += 1
+
+apnacollege                                     apnacollege                  apnacollege 1
+    |                                               |                           |
+    |                                               |                           |          
+  100 times                                     100000 times                 apnacollege 100000
+
+Example:-
+i = 1                                           i = 5
+while i <= 5:                                   while i >= 1:
+    print(i)                                        print(i)
+    i += 1                                          i -= 1
+print("Loop ended")                             print("Loop ended")
+
+1                                               5
+2                                               4
+3                                               3
+4                                               2
+5                                               1
+Loop ended                                      Loop ended 
+
+Q. Print numbers from 1 to 100                  Q. Print numbers from 100 to 1
+
+i = 1                                           i = 100
+while i <= 100:                                 while i >= 1:
+    print(i)                                        print(i)
+    i += 1                                          i -= 1
+
+1                                               100
+2                                               99
+|                                               |
+|                                               |
+100                                             1
+
+Q. Print the multiplication table of number n 
+
+n = int(inout("Enter number : "))
+i = 1
+while i <= 10:
+    print(n*i)
+    i += 1 
+
+Enter number : 3
+3
+6 
+|
+| 
+30
+
+Q. Print the elements of the following list using a loop 
+   [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# List of numbers
+numbers = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Initialize index
+i = 0
+
+# Print elements using while loop
+while i < len(numbers):
+    print(numbers[i])
+    i += 1
+
+1
+4
+|
+|
+100
+
+Example:-
+heroes = ["ironman", "thor", "superman", "batman"]
+idx = 0
+while idx < len(heroes):
+    print(heroes[idx])
+    idx += 1
+
+ironman
+thor
+superman
+batman
+
+Q. Search for a number x in this tuple using loop 
+   (1,4,9,16,25,36,49,64,81,100)
+
+# Tuple of numbers
+numbers = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
+
+# Input number to search
+x = int(input("Enter number to search: "))
+
+i = 0
+
+while i < len(numbers):
+    if numbers[i] == x:
+        print("Number found at index", i)
+        break
+    i += 1
+
+if i == len(numbers):
+    print("Number not found")
+
+Enter number to search: 49
+Number found at index 6
+
+Break:-
+Break used to terminate the loop when encountered 
+
+Continue:-
+Continue terminates execution in the current iteration and continues execution of the loop with the next iteration 
+
+Example:-
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+0
+1
+2
+3
+4
+
+Example:-
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+
+0
+1
+3
+4
+
+Example:-
+i = 1
+while i <= 5:
+    print(i)
+    if(i == 3):
+        break
+    i += 1
+print("End of loop")
+
+1
+2
+3
+End of Loop
+
+Example:-
+i = 0                  i = 1                     i = 1
+while i <= 5:          while i <= 10:            while i <= 10:
+    if i == 3:             if (i % 2 == 0):          if (i % 2 != 0):
+        i += 1                 i += 1                    i += 1
+        continue               continue                  continue 
+    print(i)               print(i)                  print(i)
+    i += 1                 i += 1                    i += 1
+
+0                      1                         2
+1                      3                         4
+2                      5                         6
+4                      7                         8
+5                      9                         10
+
+for loop:-     
+range(start, stop, step)
+for loop are used for sequential traversal.
+for traversing list, string, tuples etc 
+
+for loop:-
+for el in list:
+    #some work 
+
+for loop with else:-
+for el in list:
+    #some work 
+else:
+    #work when loop ends 
+
+Example:-
+for i in range(10):    #10 times loop work karega 
+    print("Deep")
+
+Deep
+Deep
+Deep
+Deep
+Deep
+Deep
+Deep
+Deep
+Deep
+Deep
+
+Example:-
+for i in range(5):
+    print(i)
+
+0
+1
+2
+3
+4
+
+Example:-
+for i in range(0, 10, 2):
+    print(i)
+
+0
+2
+4
+6
+8
+
+Example:-
+for i in range(0, 11, 2):
+    print(i)
+
+0
+2
+4
+6
+8
+10
+
+Example:-
+emails = ["a@gmail.com", "b@gmail.com"]
+for email in emails:
+    print("Send email to -", email)
+
+Send email to - a@gmail.com
+Send email to - b@gmail.com
+
+Loop with list:-
+
+Example:-
+nums = [1,2,3,4,5]
+for val in nums:
+    print(val)
+
+1
+2
+3
+4
+5
+
+Example:-
+veggies = ["potato", "brinjal", "ladyfinger", "cucumber"]
+for val in veggies:
+    print(val)
+
+potato 
+brinjal
+ladyfinger
+cucumber 
+
+Example:-
+tup = (1,2,3,4,5,6,7,8,9)    str = "apnacollege"       str = "apnacollege"
+for num in tup:              for char in str:          for char in str:
+    print(num)                  print(char)                print(char)
+                                                       else:
+1                            a                             print("END")
+2                            p
+3                            n                         a
+4                            a                         p
+5                            c                         n
+6                            o                         a
+7                            l                         c
+8                            l                         o
+9                            e                         l
+                             g                         l
+                             e                         e
+                                                       g
+                                                       e
+                                                       END
+
+Example:-
+for i in range(10):
+    print(i)
+else:
+    print("Loop completed")
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Loop completed
+
+Example:-
+str = "apnacollege"         str = "apnacollege"
+for char in str:            for char in str:
+    if (char == 'o'):       if char == 'o':
+        print('o found')        print('o found')
+        break                   break
+    print(char)                 print(char)
+else:                       print("END")
+    print("END")
+
+a                          a
+p                          p
+n                          n
+a                          a
+c                          c
+o found                    o found
+                           END
+
+Nested for loop:-
+
+Example:-
+for i in range(3):
+    for j in range(2):
+        print(f"i = {i}, j = {j}")
+
+i = 0, j = 0
+i = 0, j = 1
+i = 1, j = 0
+i = 1, j = 1
+i = 2, j = 0
+i = 2, j = 1
+
+Loops with strings:-
+
+Example:-
+for char in "Python":
+    print(char)
+
+P
+y
+t
+h
+o
+n
+
+Q. Print the elements of the following list using a loop 
+   [1,4,9,16,25,36,49,64,81,100]
+
+Q. Search for a number x in this tuple using loop 
+   (1,4,9,16,25,36,49,64,81,100)
+
+range():-
+range functions returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number 
+
+range(start?, stop, step?)
+
+Example:-
+print(range(5))
+
+range(0, 5)
+
+Example:-
+seq = range(5)
+print(seq[0])
+print(seq[1])
+print(seq[2])
+print(seq[3])
+
+0
+1
+2
+3
+
+Example:-
+seq = range(5)            sep = range(10)   
+for i in seq:             for i in seq:
+    print(i)                  print(i)
+
+0                         0
+1                         1
+2                         |
+3                         |
+4                         9
+
+Example:-
+for i in range(2, 10):    for i in range(2,10,2):    for i in range(2, 100, 2):     for i in range(2, 101, 2):     for i in range(1, 100, 2):
+    print(i)                  print(i)                   print(i)                       print(i)                       print(i)
+
+2                         2                          2                              2                              1
+3                         4                          4                              4                              3
+|                         6                          |                              |                              |
+|                         8                          |                              |                              |
+9                                                    98                             100                            99
+
+Q. Print numbers from 1 to 100
+Q. Print numbers from 100 to 1 
+Q. Print the multiplication table of a number n 
+
+pass statement:-
+pass is a null statement that does nothing.
+It is used as a placeholder for future code 
+
+for el in range(10):
+    pass
+
+Example:-
+for i in range(5):             for i in range(5):
+    #empty                         pass
+print("some useful work")      print("some useful work")         
+
+error shows                    some useful work
+
+Q. WAP to find the sum of first n natural numbers (using while)
+
+n = int(input("Enter number : "))
+sum = 0
+i = 1
+while i <= n:
+    sum += i
+    i += 1
+print("Total sum : ", sum)
+
+Enter number : 7
+Total sum :  28
+
+NOTE:-
+Avoid using sum as a variable name because sum() is already a built-in Python function
+Use total instead
+
+Example:-
+n = int(input("Enter number: "))
+total = 0
+i = 1
+
+while i <= n:
+    total += i
+    i += 1
+
+print("Total sum:", total)
+
+Enter number: 8
+Total sum: 36
+
+Q. WAP to find the factorial of first n natural numbers (using for)
+
+n = int(input("Enter number : "))
+fact = 1
+
+for i in range(1, n+1):
+    fact *= i
+print("Factorial : ", fact)
+
+Enter number : 5
+Factorial :  120
+
+NOTE:-
+factorial is not defined for negative integers
+
+Example:-
+n = int(input("Enter number: "))
+
+if n < 0:
+    print("Factorial is not defined for negative numbers.")
+else:
+    fact = 1
+
+    for i in range(1, n+1):
+        fact *= i
+
+    print("Factorial:", fact)
+
+Enter number: -1
+Factorial is not defined for negative numbers.
+
+Q. Convert into upper case using loop 
+
+text = "deep"
+for letter in text:
+    print(letter.upper())
+
+D
+E
+E
+P
+
+Example:-
+text = "deep"
+for letter in text:
+    print(letter.upper(), end="")
+
+DEEP
+
+--> Project - Automation bot to rename files 
+
+files = ["priya.jpg", "john.jpg", "shiva.jpg"]
+
+for i, f in enumerate(files):
+    print(f"Renaming {f} to PR_{i}.jpg")
+
+Renaming priya.jpg to PR_0.jpg
+Renaming john.jpg to PR_1.jpg
+Renaming shiva.jpg to PR_2.jpg
+
+            OR
+
+files = ["priya.jpg", "john.jpg", "shiva.jpg"]
+
+for i in range(len(files)):
+    f = files[i]
+    print(f"Renaming {f} to PR_{i}.jpg")
+
+Renaming priya.jpg to PR_0.jpg
+Renaming john.jpg to PR_1.jpg
+Renaming shiva.jpg to PR_2.jpg
+
+NOTE:-
+enumerate() is a built-in Python function that allows us to get both the index (position) and the value (element) together while using a loop
+
+Example:-
+fruits = ["Apple", "Banana", "Mango"]
+for fruit in fruits:
+    print(fruit)
+
+Apple 
+Banana
+Mango 
+
+Example:-
+fruits = ["Apple", "Banana", "Mango"]
+for i, fruit in enumerate(fruits):
+    print(i, fruit)
+
+0 Apple
+1 Banana
+2 Mango
+
+NOTE:-
+By default, enumerate() starts counting from 0
+But we can change it using start
+
+Example:-
+fruits = ["Apple", "Banana", "Mango"]
+for i, fruit in enumerate(fruits, start = 1):
+    print(i, fruit)
+
+1 Apple
+2 Banana
+3 Mango
+
+--> Project - Resume skill extractor (NLP Automation)
+
+skills = ["python", "ai", "ml"]
+resume = "Looking for a job for ai ml role with strong Python skills".lower()
+
+for skill in skills:
+    if skill in resume:
+        print(f"Matched skill: {skill}")
+
+Matched skill: python
+Matched skill: ai
+Matched skill: ml
+
+--> Project - AI Auto Directory Creator 
+
+import os
+folders = ["data", "models", "scripts", "notebook", "output"]
+project = input("Enter AI project name: ")
+
+for folder in folders:
+    path = os.path.join(project, folder)
+    os.makedirs(path, exist_ok = True)
+    print(f"Created: {path}")
+print("AI project directory created successfully!")
+
+NOTE:-
+It creates a main project directory and automatically creates five subdirectories inside it
+
+The os module helps Python interact with the operating system, such as creating folders and managing file paths
+os.path.join()  - combines folder names into a proper path
+os.makedirs()   - creates the directory, including parent directories if needed
+exist_ok = True - prevents an error if the directory already exists

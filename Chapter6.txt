@@ -1,0 +1,877 @@
+Functions:-
+Block of statements that perform a specific task 
+Using functions we reduce repetation/redundant 
+Define a function once and call it whenever needed, this makes code modular, clean, and efficient
+
+return statement:-
+"return" sends the result back to where the function was called 
+The value can be stored in a variable and used later
+without "return", it just prints but doesn't return value 
+
+def func_name(param1, param2):         #function defination 
+    #some work 
+    return val 
+
+func_name(arg1, arg2)                  #function call 
+
+Example:-
+def calc_sum(a,b):
+    sum = a + b
+    print(sum)
+    return sum 
+
+calc_sum(5, 10)     #input pass karte hai 
+calc_sum(2, 10)
+calc_sum(12, 17)
+
+15
+12
+29
+
+Example:-
+def calc_sum(a,b):
+    sum = a + b
+    print(sum)
+
+calc_sum(5, 10)
+calc_sum(2, 10)
+calc_sum(12, 17)
+
+15
+12
+29
+
+Example:-
+def calc_sum(a,b):      def calc_sum(a,b):   #parameters
+    return a + b            return a + b
+
+sum = calc_sum(1,2)     sum = calc_sum(178, 2221)   #arguments / keyword arguments
+print(sum)              print(sum)
+
+3                       2399
+
+Example:-
+def print_hello():      def print_hello():
+    print("hello")          print("hello")
+
+print_hello()           output = print_hello()
+                        print(output)
+
+hello                   hello
+                        None
+
+Example:-
+def print_hello():
+    print("hello")
+
+print_hello()
+print_hello()
+print_hello()
+print_hello()
+print_hello()
+
+hello
+hello
+hello
+hello
+hello
+
+Example:-
+def greet(name):
+    print(f"Hello {name} glad to see you")
+    
+greet("Deep")
+greet("Ravi")
+
+Hello Deep glad to see you
+Hello Ravi glad to see you
+
+NOTE:-
+jo function return mai kuch return nahi karta, uske output mai automatically None value aa jati hai 
+
+Use return to chain logic:-
+
+Example:-
+def square(num):
+    return num * num
+
+def cube(num):
+    return num * square(num)
+
+result = cube(3)
+print(result)
+
+27
+
+NOTE:-
+This is called function reusability because you are using an already-defined function (square) inside another function (cube)
+
+Q. Average of 3 numbers 
+
+def calc_avg(a,b,c):
+    sum = a + b + c
+    avg = sum/3
+    print(avg)
+    return avg 
+
+calc_avg(1,2,3)
+
+2.0
+
+NOTE:-
+sep means seperator 
+
+Example:-
+print("apnacollege")     print("apnacollege", "ShradhaKhapra")     print("apnacollege")      print("apnacollege", end = " ")    print("apnacollege", end = "$")
+                                                                   print("ShradhaKhapra")    print("ShradhaKhapra")             print("ShradhaKhapra")
+                                                                   
+apnacollege              apnacollege ShradhaKhapra                 apnacollege               apnacollege ShradhaKhapra          apnacollege$ShradhaKhapra
+                                                                   ShradhaKhapra
+
+Functions in python - Built-in functions (print(), len(), type(), range())
+                    - User defined functions 
+
+Default parameters:- 
+Assigning a default value to parameter, which is used when no argument is passed 
+
+If the user does not provide value for that parameter when calling the function, python will automatically use the Default
+If the user provide value, python will use the given value instead of the default
+
+Example:-
+def welcome(name = "Guest"):
+    print(f"Welcome {name} great to see you")
+    
+welcome("Saransh")
+
+Welcome Saransh great to see you
+
+Example:-
+def welcome(name = "Guest"):
+    print(f"Welcome {name} great to see you")
+    
+welcome()
+
+Welcome Guest great to see you
+
+Example:-
+def welcome(name):
+    print(f"Welcome {name} great to see you")
+    
+welcome()
+
+TypeError: welcome() missing 1 required positional argument: 'name'
+
+Example:-
+def cal_prod(a = 4, b = 2):     def cal_prod(a, b = 2):     def cal_prod(a = 2, b):
+    print(a * b)                    print(a * b)                print(a * b)
+    return a * b                    return a * b                return a * b 
+
+cal_prod()                      cal_prod(1)                 cal_prod(1)
+
+8                               2                           error shows 
+
+Keyword Arguments:-
+Keyword arguments allow passing values using parameter names
+Order of parameters doesn't matter with keyword arguments
+
+Example:-
+def student(name, age):
+    print(f"Name is {name}, age is {age}")
+    
+student(name = "Deep", age = 20)
+student(age = 20, name = "Deep")
+student("Deep", 20)
+student(20, "Deep")
+
+Name is Deep, age is 20
+Name is Deep, age is 20
+Name is Deep, age is 20
+Name is 20, age is Deep
+
+Variable length keyword arguments: **kwargs
+
+Single star *args
+*args collects multiple positional arguments into a tuple
+You can pass any number of values
+
+Double star **kwargs
+**kwargs collects multiple keyword arguments into a dictionary
+You pass values using key = value
+
+**kwargs means accept any number of keyword arguments and collect them into a dictionary
+**kwargs = multiple keyword = value pairs packed into a dictionary
+
+Example:-
+def total(*numbers):
+    print(sum(numbers))
+    
+total(10, 20, 30)
+
+# *number collects any number of arguments into a tuple
+# sum(numbers) calculates the total of all arguments
+
+60
+
+Example:-
+def new(**kwargs):
+    print(kwargs)
+    
+new(name = "Priyanshi", age = 23, course = "cs")
+
+{'name': 'Priyanshi', 'age': 23, 'course': 'cs'}
+
+Example:-
+def display_info(**kwargs):
+    # kwargs behaves like a normal dictionary
+    print(type(kwargs)) 
+    
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+# Call the function with any number of keyword arguments
+display_info(name = "Alice", age = 30, city = "New York")
+
+<class 'dict'>
+name: Alice
+age: 30
+city: New York
+
+Profile builder:-
+
+def profile(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key.capitalize()}: {value}")
+        
+profile(name = "Deep", age = 23, city = "New York", hobby = "art")
+
+Name: Deep
+Age: 23
+City: New York
+Hobby: art
+
+Q. WAP to print the length of list 
+   (list is the parameter)
+
+cities = ["delhi", "gurgaon", "noida", "pune", "mumbai", "chennai"]
+heroes = ["thor", "ironman", "captain america", "shaktiman"]
+
+def print_len(list):
+    print(len(list))
+
+print_len(cities)
+print_len(heroes)
+
+6
+4
+
+Q. WAP to print the elements of a list in a single line
+   (list is the parameter)
+
+cities = ["delhi", "gurgaon", "noida", "pune", "mumbai", "chennai"]
+heroes = ["thor", "ironman", "captain america", "shaktiman"]
+
+def print_list(list):
+    for item in list:
+        print(item, end = " ")
+
+print_list(heroes)
+print()
+print_list(cities)
+
+thor ironman captain america shaktiman 
+delhi gurgaon noida pune mumbai chennai 
+
+Example:-
+cities = ["delhi", "gurgaon", "noida", "pune", "mumbai", "chennai"]
+heroes = ["thor", "ironman", "captain america", "shaktiman"]
+
+def print_list(list):
+    for item in list:
+        print(item, end = " ")
+
+print_list(heroes)
+print_list(cities)
+
+thor ironman captain america shaktiman delhi gurgaon noida pune mumbai chennai 
+
+Q. WAP to find the factorial of n 
+   (n is the parameter)
+
+def cal_fact(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact *= i
+    print(fact)
+
+cal_fact(5)
+
+120
+
+Q. WAP to convert USD to INR
+
+def converter(usd_val):
+    inr_val = usd_val * 93.90
+    print(usd_val, "USD = ", inr_val, "INR")
+
+converter(1)
+
+1 USD =  93.9 INR
+
+Nested function:-
+A nested function is simply a function inside another function 
+It is useful when you want to keep some logic hidden or private inside a bigger functions
+
+Example:-
+def outer():
+    print("I am outer function")
+    
+    def inner():
+        print("I am inner function")
+        
+    inner()
+        
+outer()
+
+I am outer function
+I am inner function
+
+Lambda function:-
+Lambda function - Anonymous one-liner
+Lambda is small one line function without name used for quick easy task
+
+Example:-
+def square(x):
+    return x*x
+
+print(square(7))
+
+49
+
+Example:-
+lambda_sq = lambda x: x*x
+print(lambda_sq(8))
+
+64
+
+Project - ATM project using function:-
+
+def check_balance(balance):
+    print(f"Your balance is: {balance}")
+    
+def withdraw(balance, amount):
+    if amount > balance:
+        print("Insufficient balance")
+        
+    else:
+        balance = balance - amount
+        print(f"Withdraw successful and new balance is: {balance}")
+        
+    return balance
+        
+def deposit(balance, amount):
+    balance = balance + amount
+    print(f"Deposit successful, new balance is: {balance}")
+    return balance
+
+def atm():
+    balance = 10000
+    print("Welcome to the PR ATM")
+
+    while True:
+        print("Choose option: ")
+        print("1. Check balance")
+        print("2. Withdraw money")
+        print("3. Deposit money")
+        print("4. Exit")
+        
+        choice = input("Enter your choice(1-4): ")
+        
+        if choice == "1":
+            check_balance(balance) 
+            
+        elif choice == "2":
+            amount = float(input("Enter amount to withdraw: "))
+            balance = withdraw(balance, amount)
+            
+        elif choice == "3":
+            amount = float(input("Enter amount to deposit: "))
+            balance = deposit(balance, amount)
+            
+        elif choice == "4":
+            print("Exit, Goodbye")
+            
+            break
+        
+        else:
+            print("Invalid choice")
+            
+atm()
+
+NOTE:-
+Improvements needed:-
+
+1. Prevent negative withdrawal amounts
+   Currently, someone could enter -500 as a withdrawal amount, which would increase their balance.
+
+2. Prevent negative deposits
+   Someone could deposit -500, which would decrease their balance.
+
+3. Handle invalid inputs
+   If someone enters text instead of a number, float() will generate a ValueError.
+
+def check_balance(balance):
+    print(f"Your balance is: ₹{balance:.2f}")
+
+def withdraw(balance, amount):
+    if amount <= 0:
+        print("Please enter a valid amount")
+
+    elif amount > balance:
+        print("Insufficient balance")
+
+    else:
+        balance -= amount
+        print(f"Withdrawal successful!")
+        print(f"New balance: ₹{balance:.2f}")
+
+    return balance
+
+def deposit(balance, amount):
+    if amount <= 0:
+        print("Please enter a valid amount")
+
+    else:
+        balance += amount
+        print("Deposit successful!")
+        print(f"New balance: ₹{balance:.2f}")
+
+    return balance
+
+def atm():
+    balance = 10000
+
+    print("Welcome to the PR ATM")
+
+    while True:
+        print("Choose an option:")
+        print("1. Check balance")
+        print("2. Withdraw money")
+        print("3. Deposit money")
+        print("4. Exit")
+
+        choice = input("Enter your choice (1-4): ")
+
+        if choice == "1":
+            check_balance(balance)
+
+        elif choice == "2":
+            try:
+                amount = float(input("Enter amount to withdraw: "))
+                balance = withdraw(balance, amount)
+            except ValueError:
+                print("Please enter a valid number")
+
+        elif choice == "3":
+            try:
+                amount = float(input("Enter amount to deposit: "))
+                balance = deposit(balance, amount)
+            except ValueError:
+                print("Please enter a valid number")
+
+        elif choice == "4":
+            print("Thank you for using PR ATM. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+atm()
+
+Recursion:-
+When a function calls itself repeatedly 
+
+Example:-
+def show(n):
+    print(n)
+
+show(5)
+
+5
+
+Example:-
+def show(n):                     def show(n):            def show(n):
+    if (n == 0):   #base case        if (n == -1):           if (n == 0):
+        return                           return                  return 
+    print(n)                         print(n)                print(n)
+    show(n-1)                        show(n-1)               show(n-1)
+                                                             print("END")
+show(5)                         show(5)
+                                                        show(3)
+
+5                               5                       3
+4                               4                       2
+3                               3                       1
+2                               2                       END
+1                               1                       END
+                                0                       END
+
+NOTE:-
+pending function calls execute
+function calls return in reverse order
+
+Example:-
+def show(n):
+    if (n == 0):
+        return 
+    show(n-1)
+    print(n)
+    
+show(3)
+
+1
+2
+3
+
+Example:-
+def fact(n):
+    if (n == 1 or n == 0):
+        return 1
+    return fact(n-1) * n 
+
+print(fact(6))
+
+720
+
+NOTE:-
+code currently works for non-negative integers, but negative numbers will cause infinite recursion
+
+Example:-
+def fact(n):
+    if n < 0:
+        return "Factorial is not defined for negative numbers"
+    if n == 0 or n == 1:
+        return 1
+    return n * fact(n-1)
+
+print(fact(6))
+
+720
+
+Q. Write a recursive function to calculate the sum of first n natural number 
+
+def calc_sum(n):
+    if (n == 0):
+        return 0
+    return calc_sum(n-1) + n 
+
+sum = calc_sum(10)
+print(sum)
+
+55
+
+Q. Write a recursive function to print all elements in a list 
+   Hint: use list and index as parameters 
+
+def print_list(list, idx = 0):
+    if (idx == len(list)):
+        return 
+    print(list[idx])
+    print_list(list, idx + 1)
+
+fruits = ["mango", "litchi", "apple", "banana"]
+print_list(fruits)
+
+mango
+litchi
+apple
+banana
+
+NOTE:-
+Avoid naming your parameter list, because list is already a built-in Python function
+A better name would be items
+
+Example:-
+def print_list(items, idx=0):
+    if idx == len(items):
+        return
+
+    print(items[idx])
+    print_list(items, idx + 1)
+
+fruits = ["mango", "litchi", "apple", "banana"]
+print_list(fruits)
+
+mango
+litchi
+apple
+banana
+
+Q. Decimal to binary
+
+def decimal_to_binary(n): 
+    if n == 0:
+        return "0"
+    elif n == 1:
+        return "1"
+    
+    return decimal_to_binary(n//2) + str(n % 2)
+
+print(decimal_to_binary(25))
+
+11001
+
+NOTE:-
+code works for non-negative integers, but it doesn't handle negative numbers
+
+Example:-
+def decimal_to_binary(n):
+    if n < 0:
+        return "Negative numbers are not supported"
+    if n == 0:
+        return "0"
+    if n == 1:
+        return "1"
+
+    return decimal_to_binary(n // 2) + str(n % 2)
+
+print(decimal_to_binary(25))
+
+11001
+
+Q. Reverse string 
+
+def reverse(s):
+    if len(s) == 0:
+        return s
+    
+    return reverse(s[1:]) + s[0]
+
+print(reverse("Hello"))
+
+olleH
+
+Q. Reverse a string using recursion without slicing by using an index parameter
+
+def reverse(s, idx = 0):
+    if idx == len(s):
+        return ""
+
+    return reverse(s, idx + 1) + s[idx]
+
+print(reverse("Hello"))
+
+olleH
+
+Q. Find power 
+
+def power(x, n):
+    if n == 0:
+        return 1
+    
+    return x * power(x, n-1)
+
+print(power(2, 3))
+
+8
+
+NOTE:-
+Code works for non-negative integer powers
+
+Example:-
+def power(x, n):
+    if n == 0:
+        return 1
+    if n < 0:
+        return 1 / power(x, -n)
+
+    return x * power(x, n-1)
+
+print(power(2, -3))
+
+0.125
+
+Q. Depth-First Search (DFS) using recursion
+
+graph = {
+    'A': ['B'],
+    'B': ['D', 'C'],
+    'C': [],
+    'D': ['E'],
+    'E': []
+}
+
+def dfs(node, visited = None):
+    if visited is None:
+        visited = set()
+        
+    if node not in visited:
+        print(node)
+        visited.add(node)
+        
+        for neighbour in graph[node]:
+            dfs(neighbour, visited)
+            
+dfs('A')
+
+A
+B
+D
+E
+C
+
+Q. Binary search:-
+
+def binary_se(arr, start, end, target):
+    # Base condition - when start crosses end, stop recursion 
+    if start > end:
+        return -1
+    
+    # Find the middle index 
+    mid = (start + end) // 2
+    
+    # Check if middle element is our target
+    if arr[mid] == target:
+        return mid
+        
+    # If target is smaller -> search left half 
+    elif arr[mid] > target:
+        return binary_se(arr, start, mid-1, target)
+    
+    # If target is greater -> search right half
+    else:
+        return binary_se(arr, mid+1, end, target)
+    
+# Driver code 
+arr = [10, 20, 30, 40, 50]
+target = 20
+result = binary_se(arr, 0, len(arr) - 1, target)
+
+if result != -1:
+    print(f"Element found at index {result}")
+    
+else:
+    print("Not found")
+
+Element found at index 1
+
+Example:-
+def binary_se(arr, start, end, target):
+
+    if start > end:
+        return -1
+
+    mid = (start + end) // 2
+
+    if arr[mid] == target:
+        return mid
+
+    elif arr[mid] > target:
+        return binary_se(arr, start, mid-1, target)
+
+    else:
+        return binary_se(arr, mid+1, end, target)
+
+# Original unsorted array
+arr = [30, 10, 50, 20, 40]
+
+# Sort the array
+arr.sort()
+
+print("Sorted array:", arr)
+
+# Target element
+target = 20
+
+# Apply binary search
+result = binary_se(arr, 0, len(arr)-1, target)
+
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
+
+Q. If data in decreasing order in binary search then find target value
+
+Q. Palindrome check 
+
+def palindrome(s):
+    if len(s) <= 1:
+        return True
+    
+    if s[0] != s[-1]:
+        return False
+    
+    return palindrome(s[1:-1])
+
+print(palindrome("noon"))
+print(palindrome("Deep"))
+
+True
+False
+
+Example:-
+def palindrome(s):
+    s = s.lower()
+
+    if len(s) <= 1:
+        return True
+
+    if s[0] != s[-1]:
+        return False
+
+    return palindrome(s[1:-1])
+
+print(palindrome("Madam"))
+print(palindrome("Noon"))
+
+True
+True
+
+Project - Circle Turtle animation 
+
+# import the drawing module 
+import turtle
+
+def draw_circle(radius):
+    # Base case - stop when radius is samll
+    if radius <= 10:
+        return 
+    
+    # Draw the current circle 
+    turtle.circle(radius)
+    
+    # Recursive call - draw a smaller circle inside (or after)
+    draw_circle(radius - 20)
+    
+# Setup drawing speed and start position (optional but nice)
+turtle.speed(2)
+turtle.penup()
+turtle.goto(0, -100)    #move down to big circle 
+turtle.pendown()
+
+# Start recursion 
+draw_circle(100)
+
+# Keep the window open until user closes it 
+turtle.done()
+
+Example:-
+import turtle
+
+def draw_circle(radius):
+    if radius <= 10:
+        return
+
+    turtle.penup()
+    turtle.goto(0, -radius)
+    turtle.pendown()
+
+    turtle.circle(radius)
+
+    draw_circle(radius - 20)
+
+
+turtle.speed(2)
+draw_circle(100)
+
+turtle.done()
