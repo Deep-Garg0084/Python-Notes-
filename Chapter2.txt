@@ -1,0 +1,472 @@
+String:- 
+String is a datatype that stores a sequence of characters
+Strings are sequences of characters in quotes. In Python, you can use single, double, or triple quotes to define strings
+
+Example:-
+
+str1 = "This is a string.\nWe are creating it in python."
+print(str1)
+
+This is a string.
+We are creating it in python.
+
+Example:-
+
+str1 = "This is a string.\tWe are creating it in python."
+print(str1)
+
+This is a string.   We are creating it in python
+
+Basic operations on string:-
+
+1. Concatenation 
+
+Example:-                 Example:-
+str1 = "apna"             str1 = "apna"
+str2 = "college"          str2 = "college"
+print(str1 + str2)        final_str = str1 + str2
+                          print(final_str)
+
+apnacollege               apnacollege
+
+Repetation:-
+
+Example:-
+string = "Deep "
+print(string * 4)
+
+2. Length of str
+
+Example:-                 Example:-                   Example:-
+str1 = "apna"             str2 = "college"            final_str = str1 + " " + str2
+len1 = len(str1)          len2 = len(str2)            print(final_str)
+print(len1)               print(len2)                 print(len(final_str))
+
+4                         7                           apna college
+                                                      12
+
+Indexing:-
+Indexing is help to access the characters but we cannot modeify characters
+
+Example:-
+
+str = "apna college"
+ch = srt[0]
+print(ch)
+
+a
+
+Slicing:-
+Accessing parts of a string 
+
+str[starting_idx : ending_idx]
+
+starting index is included 
+ending index is not included 
+
+Example:-
+
+str = "apna college"
+print(str[1:4])
+
+pna
+
+Negative index:-
+
+ A  p  p  l  e
+-5 -4 -3 -2 -1
+
+Example:-
+
+str = "apple"
+print(str[-3:-1])
+
+pl
+
+String functions:-
+
+str = "I am a coder."
+
+str.endswith("er")
+return true if string ends with substr
+
+str.capatalize()
+capatalizes 1st char 
+
+str.replace(old, new)
+replaces all occurances of old with new 
+
+str.find(word)
+returns 1st index of 1st occurance
+
+str.count("am")
+counts the occurance of substr in string 
+
+NOTE:-
+The find() method searches for the given substring in the string 
+
+-> If the string is found, it returns the index of its first occurance
+-> If the substring is not found, it returns -1
+
+Examples:-
+
+str = "I am studying Python from Apna College"
+print(str.endswith("ege"))
+
+True 
+
+str = "I am studying Python from Apna College"
+print(str.endswith("app"))
+
+False 
+
+str = "i am studying Python from Apna College"
+print(str.capatalize())
+
+I am studying Python from Apna College
+
+str = "i am studying Python from Apna College"
+print(str.capatalize())
+print(str)
+
+I am studying Python from Apna College
+i am studying Python from Apna College
+
+str = "i am studying Python from Apna College"
+srt = str.capatalize()
+print(str)
+
+I am studying Python from Apna College
+
+str = "i am studying Python from Apna College"
+print(str.replace("o", "a"))
+
+i am studying pythan fram Apna Callege
+
+str = "i am studying Python from Apna College"
+print(str.replace("Python", "Javascript"))
+
+i am studying Javascript from Apna College
+
+str = "i am studying Python from Apna College"
+print(str.find("o"))
+
+18
+
+str = "i am from studying Python from Apna College"
+print(str.find("from"))
+
+5
+
+str = "i am from studying Python from Apna College"
+print(str.find("Q"))
+
+-1
+
+str = "i am from studying Python from Apna College"
+print(str.count("from"))
+
+2
+
+str = "i am from studying Python from Apna College"
+print(str.count("o"))
+
+4
+
+Q. WAP to input user's first name and print its length 
+Q. WAP to find the occurance of '$' in a string 
+Q. WAP to check if a number entered by the user is odd or even 
+Q. WAP to find the greatest of 3 numbers entered by the user 
+Q. WAP to check if a number is a multiple of 7 or not 
+
+String methods:-     
+
+Method	             Description
+capitalize()	     Converts the first character to upper case
+casefold()	         Converts string into lower case
+center()	         Returns a centered string
+count()            	 Returns the number of times a specified value occurs in a string
+encode()	         Returns an encoded version of the string
+endswith()	         Returns true if the string ends with the specified value
+expandtabs()	     Sets the tab size of the string
+find()	             Searches the string for a specified value and returns the position of where it was found
+format()	         Formats specified values in a string
+format_map()	     Formats specified values from a dictionary in a string
+index()	             Searches the string for a specified value and returns the position of where it was found
+isalnum()	         Returns True if all characters in the string are alphanumeric
+isalpha()	         Returns True if all characters in the string are in the alphabet
+isascii()	         Returns True if all characters in the string are ascii characters
+isdecimal()	         Returns True if all characters in the string are decimals
+isdigit()	         Returns True if all characters in the string are digits
+isidentifier()	     Returns True if the string is an identifier
+islower()	         Returns True if all characters in the string are lower case
+isnumeric()	         Returns True if all characters in the string are numeric
+isprintable()	     Returns True if all characters in the string are printable
+isspace()	         Returns True if all characters in the string are whitespaces
+istitle()	         Returns True if the string follows the rules of a title
+isupper()	         Returns True if all characters in the string are upper case
+join()	             Converts the elements of an iterable into a string
+ljust()	             Returns a left justified version of the string
+lower()	             Converts a string into lower case
+lstrip()	         Returns a left trim version of the string
+maketrans()	         Returns a translation table to be used in translations
+partition()	         Returns a tuple where the string is parted into three parts
+replace()	         Returns a string where a specified value is replaced with a specified value
+rfind()	             Searches the string for a specified value and returns the last position of where it was found
+rindex()	         Searches the string for a specified value and returns the last position of where it was found
+rjust()	             Returns a right justified version of the string
+rpartition()	     Returns a tuple where the string is parted into three parts
+rsplit()	         Splits the string at the specified separator, and returns a list
+rstrip()	         Returns a right trim version of the string
+split()	             Splits the string at the specified separator, and returns a list
+splitlines()	     Splits the string at line breaks and returns a list
+startswith()	     Returns true if the string starts with the specified value
+strip()	             Returns a trimmed version of the string
+swapcase()	         Swaps cases, lower case becomes upper case and vice versa
+title()	             Converts the first character of each word to upper case
+translate()	         Returns a translated string
+upper()	             Converts a string into upper case
+zfill()	             Fills the string with a specified number of 0 values at the beginning
+
+--> strip() - Removes spaces from beginning and ending 
+
+Example:-
+
+text = "   Hello Python   "
+cleaned = text.strip()
+print(cleaned)
+
+Hello Python
+
+--> replace(old, new) - Replaces part of a string 
+
+Example:-
+
+text = "Python is easy"
+print(text)
+new_text = text.replace("easy", "awesome")
+print(new_text)
+
+Python is easy
+Python is awesome
+
+--> split(delimiter) - Splits string into list
+
+Example:-
+
+text = "apple, banana, mango"
+items = text.split(",")
+print(items)
+print(type(items))
+
+['apple', ' banana', ' mango']
+<class 'list'>
+
+--> join(iterable) - Joins list elements into a string 
+
+Example:-
+
+words = ['Python', 'is', 'fun']
+sentence = " ".join(words)
+print(sentence)
+
+Python is fun
+
+words = ['Python', 'is', 'fun']
+sentence = "_".join(words)
+print(sentence)
+
+Python_is_fun
+
+--> upper() and lower() - Convert case
+
+Example:-
+
+text = "Python"
+print("Upper case - ", text.upper())
+print("Lower case - ", text.lower())
+
+Upper case -  PYTHON
+Lower case -  python
+
+--> title() and capatalize() - Capatalization 
+
+Example:-
+
+text = "python is powerful"
+print(text.title())
+print(text.capitalize())
+
+Python Is Powerful
+Python is powerful
+
+--> find() and index() - Search within a string 
+
+Example:-
+
+text = "python is powerful"
+print(text.find("is"))
+print(text.index("powerful"))
+
+7
+10
+
+text = "python is powerful"
+print(text.find("java"))
+print(text.index("powerful"))
+
+-1
+10
+
+text = "python is powerful"
+print(text.find("is"))
+print(text.index("java"))
+
+7
+ValueError: substring not found
+
+--> count() - Count occurrences
+
+Example:-
+
+text = "apple"
+print(text.count("p"))
+
+2
+
+--> startswith() and endswith() - Check string prefix/suffix 
+
+Example:-
+
+text = "Hello world python"
+print(text.startswith("Hello"))
+print(text.startswith("python"))
+
+print(text.endswith("python"))
+print(text.endswith("world"))
+
+True
+False
+True
+False
+
+--> String Indexing and Slicing
+    Slice syntax - s[start : end : step]
+
+Example:-
+
+s = "Python"
+print(s[0])       #indexing 
+print(s[-1])
+
+print(s[0:4:1])   #slicing
+print(s[:4])
+print(s[0:])
+print(s[::2])
+
+P
+n
+Pyth
+Pyth
+Python
+Pto
+
+--> String Formatting Techniques
+
+Example:-
+
+s = "Python"
+print(f"Sample example {s}")
+
+Sample example Python
+
+--> Advanced String Manipulation       ASCII values: ord(), chr()
+
+Example:-
+
+print(ord('A'))   #character -> ASCII value/code
+print(ord('b'))
+
+print(chr(65))    #ASCII code -> character
+
+65
+98
+A
+
+--> Lambda use
+
+Example:-
+
+words = ["python", "is", "awesome"]
+capitalized = list(map(lambda word: word.capitalize(), words))
+print(capitalized)
+
+['Python', 'Is', 'Awesome']
+
+NOTE:-
+map() –             Applies a function to every element of an iterable.
+lambda word: –      Creates a small anonymous function.
+word.capitalize() – Makes the first character uppercase and the remaining characters lowercase.
+list() –            Converts the map result into a list.
+
+words = ["python", "is", "awesome"]
+capitalized = list(map(lambda word: word.upper(), words))
+print(capitalized)
+
+['PYTHON', 'IS', 'AWESOME']
+
+--> Reverse string / Palindrome 
+
+Example:-
+
+word = "Deep"
+print(word[::-1])
+
+peeD
+
+Example:-
+
+word = "Deep"
+if (word == word[::-1]):
+    print("Palindrome")
+else:
+    print("No palindrome")
+print(word[::-1])
+
+No palindrome
+peeD
+
+--> Project - animate string OR typewriter effect
+
+sys = In this case, we use it to directly write output to the console (sys.stdout.write())
+time = It allows us to pause the program using time.sleep() - this is what makes the typing effect possible
+
+import sys 
+import time 
+text = "Welcome to python magic"
+
+for char in text:
+    sys.stdout.write(char)    #Prints one character without automatically adding a new line
+    sys.stdout.flush()        #Immediately displays the character
+    time.sleep(0.5)
+
+--> Project - Password strength checker 
+
+while True:
+    password = input("Enter your password: ")
+
+    length = len(password) >= 8
+    upper = any(char.isupper() for char in password)
+    lower = any(char.islower() for char in password)
+    digit = any(char.isdigit() for char in password)
+    special = any(char in "!@#$%^&*()-_+=[]{}\\|;:'\",.<>/?`~" for char in password)
+
+    if length and upper and lower and digit and special:
+        print("Strong Password")
+        break
+
+    elif length and (upper or lower) and (digit or special):
+        print("Moderate Password")
+
+    else:
+        print("Weak Password")

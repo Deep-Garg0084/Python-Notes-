@@ -1,0 +1,1004 @@
+Dictionary:-
+Dictionary are used to store data values in key:value pairs
+They are unordered, mutable (changeable) and don't allow duplicate keys 
+Dictionary in python is like a real life dictionary. Just like words(keys) have meanings(values)
+
+Example:-
+info = {
+    "key" : "value",
+    "name" : "apnacollege",
+    "learning" : "coding"
+}
+print(info)
+
+Output:
+{'key' : 'value', 'name' : 'apnacollege', 'learning' : 'coding'}
+
+Example:-
+info = {
+    "key" : "value",
+    "name" : "apnacollege",
+    "learning" : "coding",
+    "age" : 35,
+    "is_adult" : True,
+    "marks" : 94.4
+}
+print(info)
+
+{'key' : 'value', 'name' : 'apnacollege', 'learning' : 'coding',  'age' : 35, 'is_adult' : True, 'marks' : 94.4}
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    "marks" : 94.4
+}
+print(info)
+
+{'name': 'apnacollege', 'subjects': ['Python', 'C', 'Java'], 'topics': ('dict', 'set'), 'age': 35, 'is_adult': True, 'marks': 94.4}
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+print(type(info))
+
+<class 'dict'>
+
+Example:-
+info = {           info = {
+    12 : 94.4          12.99 : 94.4
+}                  }
+print(info)        print(info)
+
+{12: 94.4}         {12.99: 94.4}
+
+Accessing values:-
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+print(info["name"])
+print(info["subjects"])
+print(info["age"])
+print(info["topics"])
+
+apnacollege
+['Python', 'C', 'Java']
+35
+('dict', 'set')
+
+Example:-
+student = {
+    "name": "Priya",
+    "age": 23, 
+    "course": "AI ML"
+}
+print(student.get("age"))
+
+23
+
+Example:-
+student = {
+    "name": "Priya",
+    "age": 23, 
+    "course": "AI ML"
+}
+print(student["age"])
+
+23
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+print(info["surname"])
+
+error shows, because surname key is not present in dicionary 
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+print(info.get("surname"))
+
+None
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+print(info.get("surname", "not found"))
+
+not found
+
+Adding and Updating:-
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+info["name"] = "Shradha"
+info["surname"] = "Khapra"
+print(info)
+
+{'name': 'Shradha', 'subjects': ['Python', 'C', 'Java'], 'topics': ('dict', 'set'), 'age': 35, 'is_adult': True, 12.99: 94.4, 'surname': 'Khapra'}
+
+Example:-
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["Python", "C", "Java"],
+    "topics" : ("dict", "set"),
+    "age" : 35,
+    "is_adult" : True,
+    12.99 : 94.4
+}
+info["name"] = 23
+info["surname"] = "Khapra"
+print(info)
+
+{'name': 23, 'subjects': ['Python', 'C', 'Java'], 'topics': ('dict', 'set'), 'age': 35, 'is_adult': True, 12.99: 94.4, 'surname': 'Khapra'}
+
+Remove key:-
+
+Example:-
+student = {
+    "name": "Priya",
+    "age": 23, 
+    "course": "AI ML"
+}
+student.pop("age")
+print(student)
+
+{'name': 'Priya', 'course': 'AI ML'}
+
+Example:-
+student = {
+    "name": "Priya",
+    "age": 23, 
+    "course": "AI ML"
+}
+del student["course"]
+print(student)
+
+{'name': 'Priya', 'age': 23}
+
+Remove items:-
+
+Example:-
+student = {
+    "name": "Priya",
+    "age": 23, 
+    "course": "AI ML"
+}
+student.clear()
+print(student)
+
+{}
+
+Dictionary methods:-
+
+Example:-
+person = {"hobby": "fashion designing", "city": "Indore", "university": "ABC"}
+print(person.keys())
+
+dict_keys(['hobby', 'city', 'university'])
+
+Example:-
+person = {"hobby": "fashion designing", "city": "Indore", "university": "ABC"}
+print(person.values())
+
+dict_values(['fashion designing', 'Indore', 'ABC'])
+
+Example:-
+person = {"hobby": "fashion designing", "city": "Indore", "university": "ABC"}
+print(person.items())
+print(person)
+
+dict_items([('hobby', 'fashion designing'), ('city', 'Indore'), ('university', 'ABC')])
+{'hobby': 'fashion designing', 'city': 'Indore', 'university': 'ABC'}
+
+Loop through dictionary:-
+
+Example:-
+person = {"hobby": "fashion designing", "city": "Indore", "university": "ABC"}
+for key, value in person.items():
+    print(key, ":", value)
+
+hobby : fashion designing
+city : Indore
+university : ABC
+
+Creating a empty dictionary:-
+
+Example:-
+null_dict = {}      null_dict = {}
+print(null_dict)    null_dict["name"] = "apnacollege"
+                    print(null_dict)
+{}
+                    {'name' : 'apnacollege'}
+
+Nested dictionaries:-
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(Student)
+
+{'name': 'Rahul Kumar', 'subjects': {'phy': 97, 'chem': 98, 'math': 95}}
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(Student["subjects"])
+
+{'phy': 97, 'chem': 98, 'math': 95}
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(Student.get("subjects"))
+
+{'phy': 97, 'chem': 98, 'math': 95}
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(Student["subjects"]["chem"])
+
+98
+
+Python has a set of built-in methods that you can use on dictionaries:-
+
+clear()       Removes all the elements from the dictionary
+copy()	      Returns a copy of the dictionary
+fromkeys()	  Returns a dictionary with the specified keys and value
+get()	      Returns the value of the specified key
+items()	      Returns a list containing a tuple for each key value pair
+keys()	      Returns a list containing the dictionary's keys
+pop()	      Removes the element with the specified key
+popitem()	  Removes the last inserted key-value pair
+setdefault()  Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()	  Updates the dictionary with the specified key-value pairs
+values()	  Returns a list of all the values in the dictionary
+
+Example:-
+Student = {                           Student = {
+    "name" : "Rahul Kumar",               "name" : "Rahul Kumar:,
+    "subjects" : {                        "subjects" : {
+        "phy" : 97,                           "phy" : 97,
+        "chem" : 98,                          "chem" : 98,
+        "math" : 95                           "math" : 95
+    }                                     }
+}                                     }
+print(Student.keys())                 print(list(Student.keys()))
+
+dict_keys(['name', 'subjects'])       ['name', 'subjects']
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(len(Student))
+print(len(list(Student)))
+
+2
+2
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(Student.values())
+
+dict_values(['Rahul Kumar', {'phy': 97, 'chem': 98, 'math': 95}])
+
+Example with unpacking (*):-
+numbers = [10, 20, 30]
+print(*numbers)
+
+10 20 30
+
+Example:-
+Student = {
+    "name": "Rahul Kumar",
+    "subjects": {
+        "phy": 97,
+        "chem": 98,
+        "math": 95
+    }
+}
+print(Student["name"], *Student["subjects"].values())
+
+Rahul Kumar 97 98 95
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(list(Student.values()))
+
+['Rahul Kumar', {'phy': 97, 'chem': 98, 'math': 95}]
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(Student.items())
+
+[('name', 'Rahul Kumar'), ('subjects', {'phy': 97, 'chem': 98, 'math': 95})]
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+print(list(Student.items()))
+
+[('name', 'Rahul Kumar'), ('subjects', {'phy': 97, 'chem': 98, 'math': 95})]
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+pairs = list(Student.items())
+print(pairs[0])
+
+('name', 'Rahul Kumar')
+
+Example:-
+Student = {                      Student = {                       Student = {
+    "name" : "Rahul Kumar",          "name" : "Rahul Kumar",           "name" : "Rahul Kumar",
+    "subjects" : {                   "subjects" : {                    "subjects" : {
+        "phy" : 97,                      "phy" : 97,                       "phy" : 97,
+        "chem" : 98,                     "chem" : 98,                      "chem" : 98,
+        "math" : 95                      "math" : 95                       "math" : 95
+    }                                }                                 }
+}                                 }                                }
+print(Student["name"])            print(Student.get("name2"))      print(Student["name2"])
+print(Student.get("name"))
+
+Rahul Kumar                       None                             error shows
+Rahul Kumar
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+Student.update({"city" : "Delhi"})
+print(Student)
+
+{'name': 'Rahul Kumar', 'subjects': {'phy': 97, 'chem': 98, 'math': 95}, 'city': 'Delhi'}
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+new_dict = {"city" : "Delhi"}
+Student.update(new_dict)
+print(Student)
+
+{'name': 'Rahul Kumar', 'subjects': {'phy': 97, 'chem': 98, 'math': 95}, 'city': 'Delhi'}
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+new_dict = {"city" : "Delhi", "age" : 16}
+Student.update(new_dict)
+print(Student)
+
+{'name': 'Rahul Kumar', 'subjects': {'phy': 97, 'chem': 98, 'math': 95}, 'city': 'Delhi', 'age': 16}
+
+Example:-
+Student = {
+    "name" : "Rahul Kumar",
+    "subjects" : {
+        "phy" : 97,
+        "chem" : 98,
+        "math" : 95
+    }
+}
+new_dict = {"name" : "Neha Kumari", "age" : 16}
+Student.update(new_dict)
+print(Student)
+
+{'name': 'Neha Kumari', 'subjects': {'phy': 97, 'chem': 98, 'math': 95}, 'age': 16}
+
+NOTE:-
+Dictionaries ke andar duplicate keys allow nahi hoti 
+
+Dictionary comprehension/Square of number:-
+
+Example:-
+squares = {x**2 for x in range(5)}
+print(squares)
+
+{0, 1, 4, 9, 16}
+
+Example:-
+squares = {x: x**2 for x in range(5)}
+print(squares)
+
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+Merging Dictionaries:-
+
+Example:-
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 3, "c": 4}
+
+merged = {**d1, **d2}
+print(merged)
+
+{'a': 1, 'b': 3, 'c': 4}
+
+NOTE:-
+**d1 -         Unpacks all key-value pairs from the first dictionary.
+**d2 -         Unpacks all key-value pairs from the second dictionary.
+{**d1, **d2} - Combines both dictionaries into a new dictionary.
+
+* -  Unpacks iterables like lists and tuples.
+** - Unpacks dictionary key-value pairs.
+
+Example:-
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 3, "c": 4}
+merged = d1 | d2
+print(merged)
+
+{'a': 1, 'b': 3, 'c': 4}
+
+NOTE:-
+| -> Merges dictionaries (Python 3.9+)
+
+Counter for frequency:-
+
+Example:-
+from collections import Counter
+data = ["apple", "banana", "apple", "orange", "apple"]
+print(Counter(data))
+
+Counter({'apple': 3, 'banana': 1, 'orange': 1})
+
+Q. find the most common element using .most_common()
+
+from collections import Counter
+data = ["apple", "banana", "apple", "orange", "apple"]
+result = Counter(data)
+print(result.most_common())
+print(result.most_common(1))
+print(result.most_common(2))
+print(result.most_common(3))
+print(result.most_common(4))
+print(result.most_common(5))
+
+[('apple', 3), ('banana', 1), ('orange', 1)]
+[('apple', 3)]
+[('apple', 3), ('banana', 1)]
+[('apple', 3), ('banana', 1), ('orange', 1)]
+[('apple', 3), ('banana', 1), ('orange', 1)]
+[('apple', 3), ('banana', 1), ('orange', 1)]
+
+Set:-
+Set is the collection of the unordered items 
+Each element in the set must be unique and immutable 
+
+Set are an unordered collection of unique and immutable elements
+They are useful when you need to store distinct values and perform set operations like union, intersection, and difference 
+
+In set, indexing is not allowed because set is unordered
+
+Allowed - Immutable types like integers, strings, and tuples
+Not allowed - Mutable types like lists or dictionaries
+
+set = mutable
+values = immutable
+
+A frozenset is a collection of unique elements that cannot be changed after creation.
+
+set - Mutable (can be changed).
+frozenset - Immutable (cannot be changed).
+
+Set (Mutable):-
+
+Example:-
+my_set = {1, 2, 3}
+my_set.add(4)
+print(my_set)
+
+{1, 2, 3, 4}
+
+Frozenset (Immutable):-
+
+Example:-
+my_set = frozenset({1, 2, 3})
+print(my_set)
+
+frozenset({1, 2, 3})
+
+Example:-
+my_set = frozenset({1, 2, 3})
+my_set.add(4)
+print(my_set)
+
+AttributeError: 'frozenset' object has no attribute 'add'
+
+Example:-
+collection = {1,2,3,4}
+print(collection)
+print(type(collection))
+
+{1,2,3,4}
+<class 'set'>
+
+Duplicates are removed automatically:-
+
+Example:-
+collection = {1,2,3,4,"hello","world"}    collection = {1,2,2,2,"hello","world","world"}     collection = {1,2,2,2,"hello","world","world", 4}
+print(collection)                         print(collection)                                  print(collection)
+print(type(collection))                   print(type(collection))                            print(type(collection))
+
+{1, 2, 3, 4, 'world', 'hello'}            {1, 2, 'hello', 'world'}                           {'hello', 1, 2, 4, 'world'}
+<class 'set'>                             <class 'set'>                                      <class 'set'>
+
+NOTE:-
+That's why set is a collection of unordered items 
+
+Example:-
+collection = {1, 2, 2, "hello", "world", "world", 4}
+print(collection) 
+print(len(collection))
+
+{1, 2, 4, 'hello', 'world'}
+5
+
+Example:-
+set = {0, "Prince", 3.14, False}
+print(set)
+
+{0, 'Prince', 3.14}
+
+Example:-
+my_set = {1, 2, True, 3}
+print(my_set)
+
+{1, 2, 3}
+
+NOTE:-
+In Python, False and 0, True and 1 are considered equal
+
+Tuples(as they are immutable) in set:-
+
+Example:-
+set = {(1,2), (3,4)}
+print(set)
+
+{(1, 2), (3, 4)}
+
+Not allowed(Mutable types):-
+List inside a set - Not Allowed
+
+Example:-
+set = {[1,2], [3,4]}
+print(set)
+
+TypeError: unhashable type: 'list'            #list update ho sakti hai, but set update nahi ho sakta
+
+Dictionary inside a set - Not Allowed
+Example:-
+set = {{'a': 1, 'b': 2}}
+print(set)
+
+TypeError: unhashable type: 'dict'
+
+Example:-
+collection = {}              #empty dictionary 
+print(type(collection))
+
+<class 'dict'>
+
+Example:-
+collection = set()          #empty set
+print(type(collection))
+
+<class 'set'>
+
+Using a for loop to iterate:-
+
+Example:-
+set = {"pink", "red", "yellow"}
+for i in set:
+    print(i)
+
+red
+yellow
+pink
+
+NOTE:-
+Sets automatically remove duplicate values, but they do not guarantee the original order of elements
+
+Q. Converting lists to sets to remove duplicates
+
+a = [1, 2, 2, 3, 3, 4, 4]
+print(a)
+print(type(a))
+
+unique = set(a)
+print(unique)
+print(type(unique))
+
+[1, 2, 2, 3, 3, 4, 4]
+<class 'list'>
+{1, 2, 3, 4}
+<class 'set'>
+
+Set methods:-
+
+add()	 	                       Adds an element to the set
+clear()	 	                       Removes all the elements from the set
+copy()	 	                       Returns a copy of the set
+difference()	               -   Returns a set containing the difference between two or more sets
+difference_update()	          -=   Removes the items in this set that are also included in another, specified set
+discard()	 	                   Remove the specified item
+intersection()	               &   Returns a set, that is the intersection of two other sets
+intersection_update()	       &=  Removes the items in this set that are not present in other, specified set(s)
+isdisjoint()	 	               Returns whether two sets have a intersection or not
+issubset()                 	   <=  Returns True if all items of this set is present in another set
+ 	                           <   Returns True if all items of this set is present in another, larger set
+issuperset()	               >=  Returns True if all items of another set is present in this set
+ 	                           >   Returns True if all items of another, smaller set is present in this set
+pop()	 	                       Removes an element from the set
+remove()	 	                   Removes the specified element
+symmetric_difference()	       ^   Returns a set with the symmetric differences of two sets
+symmetric_difference_update()  ^=  Inserts the symmetric differences from this set and another
+union()	                       |   Return a set containing the union of sets
+update()	                   |=  Update the set with the union of this set and others
+
+Example:-
+collection = set()                  collection = set()                collection = set()  
+collection.add(1)                   collection.add(1)                 collection.add(1)
+collection.add(2)                   collection.add(2)                 collection.add(2)
+collection.add(2)                   collection.add(2)                 collection.add(2)
+print(collection)                   collection.remove(1)              collection.remove(7)
+                                    print(collection)                 print(collection)
+{1,2}
+                                    {2}                               error shows 
+
+Example:-
+collection = set()                  collection = set()                collection = set()                 collection = set() 
+collection.add(1)                   collection.add(1)                 collection.add(1)                  collection.add(1)
+collection.add(2)                   collection.add(2)                 collection.add(2)                  collection.add(2)
+collection.add("apnacollege")       collection.add("apnacollege")     collection.add("apnacollege")      collection.add("apnacollege")
+collection.add((1,2,3))             collection.add((1,2,3))           collection.add((1,2,3))            collection.add((1,2,3))
+print(collection)                   collection.add([1,2,3])           print(len(collection))             collection.clear()
+                                    print(collection)                                                    print(len(collection))
+{1, 2, (1, 2, 3), 'apnacollege'}                                      4
+                                    error shows                                                          0
+
+NOTE:-
+A set can contain only hashable elements
+
+Hashable means an object has a hash value that remains stable during its lifetime.
+Lists are mutable, so they are unhashable.
+Tuples (containing only hashable elements) are immutable and hashable.
+
+Example:-
+collection = {"hello", "apnacollege", "world", "coding", "python"}
+print(collection.pop())
+
+python 
+
+Example:-
+collection = {"hello", "apnacollege", "world", "coding", "python"}
+print(collection.pop())
+print(collection.pop())
+
+coding
+hello
+
+Example:-
+fruit = {"apple", "banana", "mango", "cherry"}
+fruit.add("strawberry")
+print(fruit)
+
+{'apple', 'mango', 'strawberry', 'banana', 'cherry'}
+
+Example:-
+fruit = {"apple", "banana", "mango", "cherry"}
+fruit.remove("banana")
+print(fruit)
+
+{'apple', 'cherry', 'mango'}
+
+Example:-
+fruit = {"apple", "banana", "mango", "cherry"}
+fruit.clear()
+print(fruit)
+
+set()
+
+Example:-
+fruit = {"apple", "banana", "mango", "cherry"}
+fruit.discard("mango")
+print(fruit)
+
+{'banana', 'apple', 'cherry'}
+
+Example:-
+fruit = {"apple", "banana", "mango", "cherry"}
+fruit.remove("strawberry")
+print(fruit)
+
+KeyError: 'strawberry
+
+Example:-
+fruit = {"apple", "banana", "mango", "cherry"}
+fruit.discard("strawberry")
+print(fruit)
+
+{'banana', 'mango', 'apple', 'cherry'}
+
+Union Intersection:-
+
+Example:-
+set1 = {1,2,3}                set1 = {1,2,3}                set1 = {1,2,3}         
+set2 = {2,3,4}                set2 = {2,3,4}                set2 = {2,3,4}
+print(set1.union(set2))       print(set1.union(set2))       print(set1.intersection(set2))
+                              print(set1)
+{1,2,3,4}                    print(set2)                   {2,3}
+
+                              {1,2,3,4}
+                              {1,2,3}
+                              {2,3,4}
+
+NOTE:-
+print(set1 | set2)  # Union
+print(set1 & set2)  # Intersection
+
+Example:-
+set1 = {1, 2, 3}
+set2 = {2, 3, 4}
+print(set1.union(set2))
+print(set1 | set2)
+
+{1, 2, 3, 4}
+{1, 2, 3, 4}
+
+Example:-
+set1 = {1, 2, 3}
+set2 = {2, 3, 4}
+print(set1.intersection(set2))
+print(set1 & set2)
+
+{2, 3}
+{2, 3}
+
+Difference:- 
+
+Example:- 
+A = {1,2,3}
+B = {3,4,5}
+print(A.difference(B))
+print(B.difference(A))
+
+{1, 2}
+{4, 5}
+
+Symmetric difference:-
+
+Example:-
+A = {1,2,3}
+B = {3,4,5}
+print(A.symmetric_difference(B))
+
+{1, 2, 4, 5}
+
+len():-
+
+Example:-
+A = {1,2,3,4,5}
+B = {1,2,3,4,5,6}
+print(len(A))
+print(len(B))
+
+5
+6
+
+in:-
+
+Example:-
+A = {1,2,3,4,5}
+B = {1,2,3,4,5,6}
+print(5 in A)
+print(11 in A)
+
+True
+False
+
+isdisjoint():-
+
+Example:-
+A = {1,2,3,4,5}
+B = {1,2,3,4,5,6}
+print(A.isdisjoint(B))
+
+False    #common elements hai, isliye False
+
+Example:-
+A = {1,2,3,4,5}
+B = {6}
+print(A.isdisjoint(B))
+
+True
+
+issubset():-
+
+Example:-
+A = {1,2,3,4,5}
+B = {1,2,3,4,5,6}
+print(A.issubset(B))
+print(B.issubset(A))
+
+True
+False
+
+issuperset():-
+
+Example:-
+A = {1,2,3,4,5}
+B = {1,2,3,4,5,6}
+print(A.issuperset(B))
+print(B.issuperset(A))
+
+False
+True
+
+Q. Imagine you are leaning a dataset of customer emails for a machine learning model. You want only unique emails
+
+emails = ["test@gmail.com", "yahoo@gmail.com", "test@gmail.com", "yahoo@gmail.com"]
+unique = set(emails)
+print(unique)
+
+{'yahoo@gmail.com', 'test@gmail.com'}
+
+Q. Create a program that counts the number of unique words in a paragraph 
+
+def unique_word_count(text):
+    word = text.lower().split()
+    unique_w = set(word)
+    return len(unique_w)
+
+paragraph = "Python is great and great easy easy to use"
+print(unique_word_count(paragraph))
+
+7
+
+Q. Store following word meanings in a python dictionary table : "a piece of furniture", "lists of facts and figures" cat: "a small animal"
+
+dictionary = {
+    "cat" : "a small animal",
+    "table" : ["a piece of furniture", "list of facts and figures"]
+}
+print(dictionary)
+
+{'cat': 'a small animal', 'table': ['a piece of furniture', 'list of facts and figures']}
+
+Q. You are given a list of subjects for students. Assume one classroom is required for 1 subject. How many classrooms are needed by all students 
+   "python", "java", "c++", "python", "javascript", "java", "python", "java", "c++", "c"
+
+subjects = {
+    "python", "java", "c++", "python", "javascript", "java", "python", "java", "c++", "c"
+}
+print(len(subjects))
+
+5
+
+Q. WAP to enter marks of 3 students from the user and store them in a dictionary.
+   Start with an empty dictionary and add one by one.
+   Use subject name as key and marks as value 
+
+Q. Figure out a way to store 9 and 9.0 as seperate values in a set 
+   (You can take help of built-in datatypes)

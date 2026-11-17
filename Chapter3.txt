@@ -1,0 +1,550 @@
+List:-
+A built-in datatype that stores set of values 
+It can store elements of different types (integer, float, string etc)
+A list is a collection of items that is ordered, changeable, and allows duplicates.
+Think of it like a shopping bag - you can add, remove, or replace items 
+
+Example:-
+
+groceries = ["milk", "noodles", "bread"]
+print(groceries)
+print(type(groceries))
+print(groceries[0])
+print(groceries[-1])
+
+['milk', 'noodles', 'bread']
+<class 'list'>
+milk
+bread
+
+Example:-
+
+marks = [94.4, 87.5, 95.2, 66.4, 45.1]
+print(marks)
+
+[94.4, 87.5, 95.2, 66.4, 45.1]
+
+Example:-
+
+marks = [94.4, 87.5, 95.2, 66.4, 45.1]
+print(marks)
+print(type(marks))
+
+[94.4, 87.5, 95.2, 66.4, 45.1]
+<class 'list'>
+
+Accessing elements:-
+
+Example:-
+marks = [94.4, 87.5, 95.2, 66.4, 45.1]
+print(marks[0])
+print(marks[1])
+
+94.4
+87.5
+
+Length:-
+
+Example:-
+marks = [94.4, 87.5, 95.2, 66.4, 45.1]
+print(len(marks))
+
+5
+
+Example:-
+student = ["Karan", 95.4, 17, "Delhi"]
+print(student)
+
+["Karan", 95.4, 17, "Delhi"]
+
+NOTE:-
+Strings are immutable in python 
+Lists are mutuble in python 
+
+Example:
+str = "Hello"
+print(str[0])
+str[0] = "y"
+
+Output:
+H
+error shows, because strings are immutable 
+
+Modifying a list:-
+
+Example:-
+student = ["Karan", 95.4, 17, "Delhi"]
+print(student[0])
+student[0] = "Arjun"
+print(student)
+
+Karan 
+["Arjun", 95.4, 17, "Delhi"]
+
+Example:-
+student = ["Karan", 95.4, 17, "Delhi"]
+print(student[5])
+
+error shows, because list index is out of range 
+
+Built-In List Methods:-
+These methods are called using dot notation
+
+append():  Adds an element to the absolute end of the list.
+extend():  Appends all individual elements of an iterable to the list.
+insert():  Inserts an item at a specific index location.
+remove():  Deletes the very first occurrence of a specific value.
+pop():     Removes and returns the item at a given index (defaults to the last item).
+clear():   Strips out all elements, leaving the list completely empty.
+index():   Returns the index position of the first occurrence of a value.
+count():   Returns the total number of times a value appears.
+sort():    Sorts the items of the list in place.
+reverse(): Inverts the order of the elements inside the list in place.
+copy():    Generates a shallow copy of the existing list.
+
+Built-In Global Functions:-
+These are built-in global tools in Python where you pass the list as a parameter (e.g., len(my_list))
+
+len():       Counts and returns the total number of elements.
+max():       Finds the largest item within the list.
+min():       Finds the smallest item within the list.
+sum():       Calculates the total sum of numeric items.
+sorted():    Returns a brand new sorted list without modifying the original.
+list():      Converts another iterable data type into a list object.
+any():       Returns True if at least one item evaluates to true.
+all():       Returns True only if every single item evaluates to true.
+enumerate(): Pairs list items with their index numbers for looping.
+zip():       Aggregates elements from multiple lists into corresponding tuples.
+
+Python has a set of built-in methods that you can use on lists/arrays.
+
+Note: Python does not have built-in support for Arrays, but Python Lists can be used instead.
+
+          0   1   2   3   4
+marks = [87, 64, 33, 95, 76]
+        -5   -4  -3  -2  -1
+
+List slicing:-
+Similar to string slicing 
+
+list_name[starting_idx : ending_idx]
+
+ending index is not included 
+
+Example:
+marks = [85, 94, 76, 63, 48]
+print(marks[1:4])
+
+[94, 76, 63]
+
+marks = [85, 94, 76, 63, 48]
+print(marks[:4])
+
+[85, 94, 76, 63]
+
+marks = [85, 94, 76, 63, 48]
+print(marks[1:])
+
+[94, 76, 63, 48]
+
+marks = [85, 94, 76, 63, 48]
+print(marks[-3:-1])
+
+[76, 63]
+
+marks = [85, 94, 76, 63, 48]
+print(marks[::-1])
+
+[48, 63, 76, 94, 85]
+
+List methods:-
+
+Example:-
+list = [2, 1, 3]
+
+list.append[4]              
+adds one element at the end 
+
+list.sort()                  
+sort in ascending order 
+
+list.sort(reverse = True)    
+sort in descending order
+
+list.reverse()              
+reverse the list 
+
+list.insert(idx, el)
+insert element at index 
+
+list.remove(1)               
+removes first occurance of element
+
+list.pop(idx)
+removes element at index 
+
+Example:-
+list = [2,1,3]                         list = [2,1,3]
+list.append(4)                         print(list.append(4))
+print(list)
+
+[2,1,3,4]                               None 
+
+Example:-
+list = [2,1,3]                          list = [2,1,3]
+list.sort()                             print(list.sort())
+print(list)                             print(list)
+
+[1,2,3]                                 None 
+                                        [1,2,3]
+
+Example:-
+list = [2,1,3]                          list = [2,1,3]
+print(list.append(4))                   print(list.append(4))
+print(list.sort())                      print(list.sort())
+print(list)                             print(list)
+
+None                                    None 
+None                                    None 
+[1,2,3,4]                               [1,2,3,4]
+
+Example:-
+list = ["banana", "litchi", "apple"]    list = ["banana", "litchi", "apple"]
+print(list.sort(reverse = True))        print(list.sort())
+print(list)                             print(list)
+
+None                                    None
+["litchi", "banana", "apple"]           ["apple", "banana", "litchi"]
+
+Example:-
+list = ['a', 'd', 'e', 'f', 'c', 'b']   list = ['a', 'd', 'e', 'f', 'c', 'b']
+print(list.sort())                      list.reverse()
+print(list)                             print(list)                        
+
+None                                    ['b', 'c', 'f', 'e', 'd', 'a']
+['a', 'b', 'c', 'd', 'e', 'f']
+
+Example:-
+num = [2, 5, 9, 0, 21, 4]
+num.reverse()
+print(num)
+
+[4, 21, 0, 9, 5, 2]
+
+Example:-
+list = [2,1,3]
+list.insert(1,5)
+print(list)
+
+[2,5,1,3]
+
+Example:-
+list = [2,1,3,1]
+list.pop(2)
+print(list)
+
+[2,1,1]
+
+Example:-
+list = [2,1,3,1]
+list.remove(1)
+print(list)
+
+[2,3,1]
+
+Example:-
+my_list = ["apple", "banana", "cherry"]
+my_list.remove("apple")
+print(my_list)
+
+['banana', 'cherry']
+
+Example:-
+my_list = ["apple", "banana", "cherry"]
+my_list.pop()
+print(my_list)
+
+['apple', 'banana']
+
+Example:-
+my_list = ["apple", "banana", "cherry"]
+del my_list[1]
+print(my_list)
+
+['apple', 'cherry']
+
+Looping:-
+
+Example:-
+my_list = ["apple", "banana", "cherry", "mango"]
+for item in my_list:
+    print(item)
+
+apple
+banana
+cherry
+mango
+
+--> List comprehension - Comprehension meaning finding square 
+
+Example:-
+numbers = [10, 20, 10, 40, 50]
+squares = [x*x for x in numbers]
+print(squares)
+
+[100, 400, 100, 1600, 2500]
+
+Example:-
+squares = [x*x for x in range(10)]
+print(squares)
+
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+--> Nested list:-
+
+#           0      1
+#          0 1    0  1
+matrix = [[1,2], [13,4]]
+print(matrix)
+print(matrix[1][0])
+print(matrix[1])
+
+[[1, 2], [13, 4]]
+13
+[13, 4]
+
+Tuples:-
+A built-in datatype that lets us create immutable sequence of values 
+Tuples are ordered, immutable collections in Python. Once created, you cannot modify a tuple. 
+They are commonly used to store a collection of items that should not change 
+
+NOTE:-
+list are mutuable in python 
+Tuple are immutable in python just like strings 
+
+Single tuple:-
+
+Example:-
+tup = (2)
+print(tup)
+print(type(tup))
+
+2
+<class 'int'>
+
+Example:-
+tup = (2,)
+print(tup)
+print(type(tup))
+
+(2,)
+<class 'tuple'>
+
+Example:-
+a = [1,2]
+print(a)
+print(type(a))
+
+[1, 2]
+<class 'list'>
+
+Example:-
+a = [1,2], [3,4], [4,1]
+print(a)
+print(type(a))
+
+([1, 2], [3, 4], [4, 1])
+<class 'tuple'>
+
+Example:-
+a = ([1,2], [3,4], [4,1])
+print(a)
+print(type(a))
+
+([1, 2], [3, 4], [4, 1])
+<class 'tuple'>
+
+Example:-
+a = [[1,2], [3,4], [4,1]]
+print(a)
+print(type(a))
+
+[[1, 2], [3, 4], [4, 1]]
+<class 'list'>
+
+Example:-
+tup = (2,1,3,1)
+print(tup)
+print(type(tup))
+
+(2, 1, 3, 1)
+<class 'tuple'>
+
+Example:-
+tup = (2,1,3,1)
+print(tup[0])
+print(tup[1])
+
+2
+1
+
+Example:-
+tup = (2,1,3,1)
+tup[0] = 5
+print(tup)
+
+error shows, because tuples are immutable 
+
+Example:-
+tup = ()             tup = (1,)          tup = (1)             tup = (1.0)          tup = ("hello")     tup = ("hello", )    tup = (1,2,3,4,)     tup = (1,2,3,4)
+print(tup)           print(tup)          print(tup)            print(tup)           print(tup)          print(tup)           print(tup)           print(tup)
+print(type(tup))     print(type(tup))    print(tuple(type))    print(type(tup))     print(type(tup))    print(type(tup))     print(type(tup))     print(type(tup))
+
+()                   (1,)                1                     1.0                  hello               ('hello', )          (1,2,3,4)            (1,2,3,4)
+<class 'tuple'>      <class 'tuple'>     <class 'int'>         <class 'float'>      <class 'str'>       <class 'tuple'>      <class 'tuple'>      <class 'tuple'>
+
+--> Tuple slicing:-
+
+Example:-
+tup = (1,2,3,4)
+print(tup[1:3])
+print(tup[:3])
+print(tup[1:])
+print(tup[::2])
+print(tup[::-1])
+print(tup[-1])
+
+(2, 3)
+(1, 2, 3)
+(2, 3, 4)
+(1, 3)
+(4, 3, 2, 1)
+4
+
+--> Looping through a tuple:-
+
+Example:-
+tup = (1,2,3,4)
+for item in tup:
+    print(item)
+
+1
+2
+3
+4
+
+--> Tuple packing and unpacking
+
+Example:-
+packed_tuple = ("apple", "banana", "cherry")
+print(packed_tuple)
+
+apple, banana, cherry = packed_tuple
+print(apple, banana, cherry)
+
+Output:-
+('apple', 'banana', 'cherry')
+apple banana cherry
+
+Example:-
+tuple = ("apple", "banana", "cherry")
+print(len(tuple))
+
+3
+
+Tuple methods:-
+count()	Returns the number of times a specified value occurs in a tuple
+index()	Searches the tuple for a specified value and returns the position of where it was found
+
+Example:-
+tup = (1,2,3,4)
+print(tup.index(2))   #find index number of 2
+
+1
+
+Example:-
+tup = (1,2,3,4)          tup = (1,2,3,4,2,2)
+print(tuple.count(2))    print(tuple.count(2))  
+
+1                        3
+
+--> Convert tuple to list
+
+Example:-
+colors = ("red", "golden", "white", "yellow")
+
+# convert tuple to list
+color_list = list(colors)
+print(color_list)
+
+color_list.append("green")
+print(color_list)
+
+# convert list to tuple
+tuple_color = tuple(color_list)
+print(tuple_color)
+
+['red', 'golden', 'white', 'yellow']
+['red', 'golden', 'white', 'yellow', 'green']
+('red', 'golden', 'white', 'yellow', 'green')
+
+--> Sorting 
+
+Example:-
+pairs = [(1,3), (1,2), (0,10), (1,2,5)]
+print(sorted(pairs))
+
+[(0, 10), (1, 2), (1, 2, 5), (1, 3)]
+
+Q. Find the highest percentage
+
+
+# Q. Find the Highest Percentage
+
+def topper(students):
+    highest_avg = 0
+    topper_name = ""
+
+    for name, marks in students:
+        avg = sum(marks) / len(marks)
+
+        if avg > highest_avg:
+            highest_avg = avg
+            topper_name = name
+
+    return topper_name, highest_avg
+
+
+students = [
+    ("Riya", [50, 60, 10]),
+    ("Priya", [70, 80, 80]),
+    ("Amit", [90, 80, 80])
+]
+
+name, percentage = topper(students)
+
+print(f"Topper: {name}")
+print(f"Highest Percentage: {percentage:.2f}%")
+
+Topper: Amit
+Highest Percentage: 83.33%
+
+Q. WAP to ask the user to enter names of their 3 favourite movies and store them in a list 
+Q. WAP to check if a list contains a palindrome of elements (Hint: use copy() method)
+
+Q. WAP to count the number of students with "A" grade in the following tuple 
+   grade = ("C", "D", "A", "A", "B", "B", "A")
+
+grade = ("C", "D", "A", "A", "B", "B", "A")
+print(grade.count("A"))
+
+3
+
+Q. Store the above values in a list and sort them from "A" to "D"
+   grade = ("C", "D", "A", "A", "B", "B", "A")
+
+grade = ("C", "D", "A", "A", "B", "B", "A")
+grade.sort()
+print(grade)
+
+['A', 'A', 'A', 'B', 'B', 'C', 'D']
